@@ -37,9 +37,6 @@ function ze
   end
 end
 
-set -gx _CL_REPO_ROOT $HOME/clarity/clarity
-# eval "cl init -"
-
 set -gx EDITOR 'emacs'
 
 set -gx PATH ~/bin ~/.cl/bin /usr/local/bin $PATH
