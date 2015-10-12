@@ -25,22 +25,20 @@
 
 [alias]
   a    = add
-  c    = commit
+  c    = commit -v
   cm   = commit -m
   ca   = commit -a
   co   = checkout
   d    = diff
   dc   = diff --cached
-  l    = log
   s    = status
   ss   = status -sb
   pom  = push origin master
-  glg  = log --graph --oneline --decorate
+  l    = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   ff   = merge --no-commit
   recent = "for-each-ref --count=5 --sort=-committerdate --format='%(refname:short)' refs/heads/"
-
   worklog = log --format='%C(green)%ci %C(yellow) %h %C(blue) %cn %C(reset) %s' --author='Vincent Roy'
-	b = branch
+  b = branch
   g = gb
 
 [difftool]
