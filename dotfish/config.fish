@@ -41,6 +41,10 @@ function ze
   end
 end
 
+function marked
+  open -a Marked $argv
+end
+
 set -gx EDITOR 'emacs'
 
 set -gx PATH ~/bin ~/.cl/bin /usr/local/bin $PATH
@@ -54,8 +58,6 @@ rbenv init - | source
 set -gx GOPATH $HOME/go
 set -gx PATH $HOME/go/bin $PATH
 
-alias grep='grep --color'
-
 alias ls='ls -G'
 alias ll='ls -l'
 alias la='ls -A'
@@ -65,13 +67,16 @@ alias cls='clear'
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
-
+alias grep='grep --color'
 alias du0='du -h --max-depth=0'
-
-# expands "g+<space>" and "g+<enter>" to "git". This fixes
-# the problem with completions not working with aliases until
-# the real --wraps behaviour lands in the brew version.
 alias g='git'
+alias ios="open /Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app/"
+alias lan_ip="ifconfig | ruby -e ' puts STDIN.read.scan(/inet ((\d+\.?){4}).*broadcast/).first.first '"
+alias ag='ag --color --color-line-number 35 --color-path 34 --color-match 31'
+alias psql='psql --host=localhost'
+alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
+alias tt='tmux new -A -s default'
+
 set -U fish_user_abbreviations
 
 abbr g 'git'
@@ -79,19 +84,3 @@ abbr t 'tmux'
 abbr z 'zeus'
 abbr py 'python'
 abbr dm 'docker-machine'
-
-alias ios="open /Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app/"
-
-alias lan_ip="ifconfig | ruby -e ' puts STDIN.read.scan(/inet ((\d+\.?){4}).*broadcast/).first.first '"
-
-alias ag='ag --color --color-line-number 35 --color-path 34 --color-match 31'
-
-alias psql='psql --host=localhost'
-
-alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
-
-function marked
-         open -a Marked $argv
-end
-
-alias tt='tmux new -A -s default'
