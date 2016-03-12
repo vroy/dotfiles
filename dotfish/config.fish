@@ -20,6 +20,10 @@ function fish_title
   end
 end
 
+function fish_greeting
+  # Disable greeting
+end
+
 function fish_prompt
   if test -d .git
     printf '%s%s%s:%s$ ' (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) (parse_git_branch)
