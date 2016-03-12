@@ -50,7 +50,9 @@ set -gx SLIMERJSLAUNCHER /Applications/Firefox.app/Contents/MacOS/firefox
 
 set -gx PATH $HOME/code/smartprs/bin $PATH
 
-set -gx PATH $HOME/.rbenv/shims $PATH
+set -gx PATH $HOME/.rbenv/bin $PATH
+rbenv init - | source
+
 
 set -gx GOPATH $HOME/go
 set -gx PATH $HOME/go/bin $PATH
