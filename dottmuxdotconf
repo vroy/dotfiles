@@ -16,10 +16,16 @@ set -g history-limit 20000
 set -g status-position top
 set -g default-terminal "screen-256color"
 
-# Make the current window more visible
-set-window-option -g window-status-current-fg red
-set-window-option -g window-status-current-bg black
-set-window-option -g window-status-current-attr bright
+# Make the current window more visible.
+set -g window-status-format ' #I:#T '
+set -g window-status-current-format ' #[fg=colour50]#I:#T '
+set -g window-status-current-bg black
+
+# Allow for longer session names to be shown.
+set -g status-left-length 60
+
+# Erase right status message.
+set -g status-right ""
 
 # Reload config file.
 bind r source-file ~/.tmux.conf

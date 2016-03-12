@@ -13,11 +13,7 @@ function parse_git_branch
 end
 
 function fish_title
-  if contains $_ "fish"
-    pwd | sed 's!'"$HOME"'!~!g'
-  else
-    echo $_
-  end
+  prompt_pwd
 end
 
 function fish_greeting
