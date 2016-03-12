@@ -1,51 +1,42 @@
-set-option -g prefix C-a
-bind-key C-a send-prefix
+# Remap C-b to C-q
+set -g prefix C-q
+bind C-q send-prefix
 
-# Faster to rotate through the latest windows.
-bind-key C-a last-window
-
-# Allows for C-a C-d to work as well (a bit easier to type)
-bind-key ^D detach-client
-
-# C-a r reloads the configuration
-bind-key r source-file ~/.tmux.conf
-
-# Directly navigate through the windows with the arrows
-bind-key -n C-right next-window
-bind-key -n C-left previous-window
-
-# Directly navigate through the panes with the arrows
-bind-key -n C-up select-pane -t :.-
-bind-key -n C-down select-pane -t :.+
-
-# A way to split the windows that is easier to remember
-unbind %
-bind-key | split-window -h
-bind-key - split-window -v
+# Fix iTerm keys being sent to tmux.
+# https://github.com/tmux/tmux/issues/159
+set -g assume-paste-time 0
 
 # 0 is too far from 1
-set-option -g base-index 1
+set -g base-index 1
+set-window-option -g pane-base-index 1
+
+# Miscellaneous
+set -g renumber-windows on
+set -g history-limit 20000
+set -g status-position top
+set -g default-terminal "screen-256color"
 
 # Make the current window more visible
-set-window-option -g window-status-current-fg white
+set-window-option -g window-status-current-fg red
 set-window-option -g window-status-current-bg black
 set-window-option -g window-status-current-attr bright
 
-# Let me know when something changed in a window.
-set-window-option -g monitor-activity on
+# Reload config file.
+bind r source-file ~/.tmux.conf
 
-# Make the panes more visible
-set-option -g pane-active-border-bg white
-set-option -g pane-active-border-fg black
+# Pane navigation similar to window navigation.
+bind C-p select-pane -t :.-
+bind C-n select-pane -t :.+
 
+# Logical split-window
+bind | split-window -h
+bind \ split-window -h
+bind - split-window -v
 
-bind-key -n M-1 select-window -t 1
-bind-key -n M-2 select-window -t 2
-bind-key -n M-3 select-window -t 3
-bind-key -n M-4 select-window -t 4
-bind-key -n M-5 select-window -t 5
-bind-key -n M-6 select-window -t 6
-bind-key -n M-7 select-window -t 7
-bind-key -n M-8 select-window -t 8
-bind-key -n M-9 select-window -t 9
-bind-key -n M-0 select-window -t 10
+# Skip confirmation prompt when closing pane
+bind x kill-pane
+
+# Enable mouse support / scrolling (https://github.com/tmux/tmux/issues/145)
+set -g mouse on
+bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
+bind -n WheelDownPane select-pane -t= \; send-keys -M

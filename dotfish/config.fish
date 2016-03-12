@@ -101,3 +101,5 @@ alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
 function marked
          open -a Marked $argv
 end
+
+alias tt='tmux new -A -s default'
