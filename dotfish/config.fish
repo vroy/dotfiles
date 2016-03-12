@@ -44,15 +44,8 @@ set -gx PATH $HOME/.cask/bin $PATH
 set -gx PATH $HOME/google-cloud-sdk/bin $PATH
 set -gx PATH $HOME/Dropbox/code/clarity/clarity/bin $PATH
 
-# Custome slimerjs build...
-set -gx PATH $HOME/Downloads/slimerjs-RELEASE_0.9.6/src $PATH
-set -gx SLIMERJSLAUNCHER /Applications/Firefox.app/Contents/MacOS/firefox
-
-set -gx PATH $HOME/code/smartprs/bin $PATH
-
 set -gx PATH $HOME/.rbenv/bin $PATH
 rbenv init - | source
-
 
 set -gx GOPATH $HOME/go
 set -gx PATH $HOME/go/bin $PATH
@@ -86,11 +79,6 @@ abbr dm 'docker-machine'
 alias ios="open /Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app/"
 
 alias lan_ip="ifconfig | ruby -e ' puts STDIN.read.scan(/inet ((\d+\.?){4}).*broadcast/).first.first '"
-
-alias fact="elinks -dump randomfunfacts.com | sed -n '/^| /p' | tr -d \|"
-
-# alias tunnel='autossh -M 10030 -f -N -R :3003:localhost:3000 vince@legacy-staging.clarity.fm'
-alias tunnel='ssh -R :3003:localhost:3000 vince@legacy-staging.clarity.fm'
 
 alias ag='ag --color --color-line-number 35 --color-path 34 --color-match 31'
 
