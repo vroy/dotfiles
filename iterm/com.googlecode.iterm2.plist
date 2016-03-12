@@ -572,9 +572,9 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>367 392 924 485 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>5 688 745 476 0 0 1920 1177 </string>
+	<string>2 400 745 476 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>548 617 745 476 0 0 1920 1177 </string>
+	<string>324 353 745 476 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>357 434 745 476 0 0 1920 1177 </string>
 	<key>NeverWarnAboutShortLivedSessions_2F33DA68-033A-4BB4-8F6C-1C6EECE774AF</key>
@@ -830,7 +830,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>tt</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
