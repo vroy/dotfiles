@@ -69,18 +69,19 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 
-alias py='python'
-
 alias du0='du -h --max-depth=0'
 
 # expands "g+<space>" and "g+<enter>" to "git". This fixes
 # the problem with completions not working with aliases until
 # the real --wraps behaviour lands in the brew version.
 alias g='git'
-set -U fish_user_abbreviations 'g=git'
+set -U fish_user_abbreviations
 
-
-alias t='git ls-files | grep'
+abbr g 'git'
+abbr t 'tmux'
+abbr z 'zeus'
+abbr py 'python'
+abbr dm 'docker-machine'
 
 alias ios="open /Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app/"
 
@@ -90,8 +91,6 @@ alias fact="elinks -dump randomfunfacts.com | sed -n '/^| /p' | tr -d \|"
 
 # alias tunnel='autossh -M 10030 -f -N -R :3003:localhost:3000 vince@legacy-staging.clarity.fm'
 alias tunnel='ssh -R :3003:localhost:3000 vince@legacy-staging.clarity.fm'
-
-alias z='zeus'
 
 alias ag='ag --color --color-line-number 35 --color-path 34 --color-match 31'
 
