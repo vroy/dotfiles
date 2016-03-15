@@ -41,6 +41,10 @@ function marked
   open -a Marked $argv
 end
 
+function sfind
+  find . -name $argv | grep -v '^\.\/\.git'
+end
+
 set -gx EDITOR 'emacs'
 
 set -gx PATH ~/bin ~/.cl/bin /usr/local/bin $PATH
