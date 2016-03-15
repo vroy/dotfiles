@@ -75,7 +75,7 @@ alias lan_ip="ifconfig | ruby -e ' puts STDIN.read.scan(/inet ((\d+\.?){4}).*bro
 alias ag='ag --color --color-line-number 35 --color-path 34 --color-match 31'
 alias psql='psql --host=localhost'
 alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
-alias tt='tmux new -A -s default'
+alias tt='mux start default'
 
 set -U fish_user_abbreviations
 

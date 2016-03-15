@@ -1,0 +1,6 @@
+name: default
+windows:
+  - zero:
+      layout: main-vertical
+      panes:
+        - # empty
