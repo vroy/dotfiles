@@ -282,12 +282,26 @@
 			<key>Text</key>
 			<string>0x11 0xa1</string>
 		</dict>
+		<key>0x31-0x40000</key>
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x1b 0x31</string>
+		</dict>
 		<key>0x32-0x100000</key>
 		<dict>
 			<key>Action</key>
 			<integer>11</integer>
 			<key>Text</key>
 			<string>0x11 0x32</string>
+		</dict>
+		<key>0x32-0x40000</key>
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x1b 0x32</string>
 		</dict>
 		<key>0x33-0x100000</key>
 		<dict>
@@ -296,6 +310,13 @@
 			<key>Text</key>
 			<string>0x11 0x33</string>
 		</dict>
+		<key>0x33-0x40000</key>
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x1b 0x33</string>
+		</dict>
 		<key>0x34-0x100000</key>
 		<dict>
 			<key>Action</key>
@@ -303,12 +324,26 @@
 			<key>Text</key>
 			<string>0x11 0x34</string>
 		</dict>
+		<key>0x34-0x40000</key>
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x1b 0x34</string>
+		</dict>
 		<key>0x35-0x100000</key>
 		<dict>
 			<key>Action</key>
 			<integer>11</integer>
 			<key>Text</key>
 			<string>0x11 0x35</string>
+		</dict>
+		<key>0x35-0x40000</key>
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x1b 0x35</string>
 		</dict>
 		<key>0x36-0x100000</key>
 		<dict>
@@ -1323,7 +1358,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-03-12T14:12:45Z</date>
+	<date>2016-03-15T01:02:01Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
