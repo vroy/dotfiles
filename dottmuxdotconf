@@ -34,10 +34,13 @@ bind r source-file ~/.tmux.conf
 bind C-p select-pane -t :.-
 bind C-n select-pane -t :.+
 
+# Open new window in same path as current pane.
+bind c new-window -c "#{pane_current_path}"
+
 # Logical split-window
-bind | split-window -h
-bind \ split-window -h
-bind - split-window -v
+bind | split-window -h -c "#{pane_current_path}"
+bind \ split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
 
 # Skip confirmation prompt when closing pane
 bind x kill-pane
