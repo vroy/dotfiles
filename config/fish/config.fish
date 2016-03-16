@@ -84,6 +84,7 @@ abbr t 'tmux'
 abbr z 'zeus'
 abbr py 'python'
 abbr dm 'docker-machine'
+abbr b 'bundle'
 
 # Commonly used locations
 set -U platform ~/code/platform
