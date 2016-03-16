@@ -84,3 +84,11 @@ abbr t 'tmux'
 abbr z 'zeus'
 abbr py 'python'
 abbr dm 'docker-machine'
+
+# Commonly used locations
+set -U platform ~/code/platform
+set -U bedrock ~/code/bedrock
+set -U ci ~/code/platform-ci
+set -U code ~/code
+set -U jarvis ~/code/platform-ci/jarvis
+set -U dotfiles ~/dotfiles
