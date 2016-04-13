@@ -19,6 +19,9 @@
 (global-set-key [(control shift tab)] 'previous-multiframe-window)
 (global-set-key [(meta tab)] 'other-window)
 
+(global-set-key (kbd "s-[") 'previous-multiframe-window)
+(global-set-key (kbd "s-]") 'other-window)
+
 (global-set-key (kbd "s-k") 'vince-kill-whole-line)
 
 ;; projectile
