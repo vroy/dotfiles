@@ -44,3 +44,5 @@
 
 
 (add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
+(add-to-list 'auto-mode-alist '("\\.patch$" . diff-mode))
+(add-to-list 'auto-mode-alist '("\\.diff$" . diff-mode))
