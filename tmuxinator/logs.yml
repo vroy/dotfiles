@@ -1,0 +1,29 @@
+<%
+require "json"
+
+if args[0].nil? or args[0].to_s.strip == ""
+  puts "Please provide an environment that can be found by `i`."
+  exit! 1
+end
+
+begin
+  vip = `i #{args[0]}`.lines.grep(/^virtual_external_ipv4/).first.split("=").last.strip
+  puts vip
+  response = JSON.parse(`curl -s http://#{vip}:9091/v1/nodes/allocation?service=platform`)
+
+  nodes = response["nodes"]
+rescue Exception => e
+  puts "Failed to fetch nodes: #{e}"
+  exit! 1
+end
+%>
+
+name: logs-<%= args[0] %>
+root: ~/
+windows:
+  - ~:
+      layout: even-vertical
+      panes:
+        <%- nodes.each do |node| %>
+        - ssh <%= node["topology"]["external_ipv4"] %> -t "cd /opt/emc/caspian/logs; bash"
+        <%- end %>
