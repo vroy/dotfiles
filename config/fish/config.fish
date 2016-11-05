@@ -39,7 +39,8 @@ end
 set -gx EDITOR 'emacs'
 
 set -gx GOPATH $HOME/go
-set -gx PATH $HOME/go/bin $PATH
+set -gx PATH $GOBIN $PATH
+set -gx GOBIN $GOPATH/bin
 
 alias ls='ls -G'
 alias ll='ls -l'
@@ -65,7 +66,17 @@ abbr t 'tmux'
 abbr py 'python'
 abbr dm 'docker-machine'
 abbr b 'bundle'
+abbr j 'jarvis'
 
 # Commonly used locations
 set -U code ~/code
 set -U dotfiles ~/dotfiles
+set -U ansible ~/code/oss/ansible
+set -U images ~/code/images
+set -U go ~/code/images/go
+set -U ui ~/code/ui-ec
+set -U scaleio ~/code/scaleio
+set -U lbsync ~/code/lb-sync
+set -U ccs ~/code/caspian-common-services
+set -U c3 ~/code/c3
+set -U dockstack ~/code/dockstack
