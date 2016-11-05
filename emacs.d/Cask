@@ -32,6 +32,9 @@
 (depends-on "groovy-mode")
 
 (depends-on "scad-mode")
+(depends-on "cask-mode")
+(depends-on "jinja2-mode")
+(depends-on "web-mode")
 
 ;; Themes
 (depends-on "zenburn-theme")
@@ -67,3 +70,6 @@
 (depends-on "go-autocomplete")
 
 (depends-on "py-autopep8")
+
+(depends-on "flycheck")
+(depends-on "zoom-window")
