@@ -9,6 +9,7 @@
 
 (global-set-key [(control return)] 'vince-next-line)
 (global-set-key (kbd "<s-return>") 'vince-next-line)
+(global-set-key (kbd "<s-S-return>") 'zoom-window-zoom)
 
 (global-set-key (kbd "C-S-k") 'vince-backward-kill-line)
 

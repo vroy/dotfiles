@@ -8,6 +8,8 @@
                  :foreground "#2e3330" :background "#88b090"
                  :box '(:color "#88b090" :line-width 1))
 
+(setq zoom-window-mode-line-color "#889FB0")
+
 (set-face-attribute 'mode-line-inactive nil
                  :foreground "#acbc90" :background "#1e2320"
                  :box '(:color "#1e2320" :line-width 1))
