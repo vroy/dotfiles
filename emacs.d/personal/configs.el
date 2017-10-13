@@ -12,7 +12,7 @@
 
 ;; Enable ido with a config similar to prelude
 (require 'ido)
-(require 'ido-ubiquitous)
+(require 'ido-completing-read+)
 (require 'flx-ido)
 (setq ido-enable-prefix nil
       ido-enable-flex-matching t
