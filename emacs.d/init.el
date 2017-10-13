@@ -20,4 +20,4 @@
 (load "paredit-cfg.el")
 (load "golang.el")
 (load "python-cfg.el")
-(load "erlang.el")
+;; (load "erlang.el")

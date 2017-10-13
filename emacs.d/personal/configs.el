@@ -131,8 +131,7 @@
 
 
 
-
-(global-relative-line-numbers-mode)
+;; (global-relative-line-numbers-mode)
 
 
 (require 'flycheck)
