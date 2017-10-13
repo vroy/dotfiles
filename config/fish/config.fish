@@ -28,15 +28,6 @@ function fish_prompt
   end
 end
 
-function ze
-  zeus $argv
-  set exit_code $status
-  stty sane
-  if test $exit_code = 2
-    ze $argv
-  end
-end
-
 function marked
   open -a Marked $argv
 end
@@ -46,14 +37,6 @@ function sfind
 end
 
 set -gx EDITOR 'emacs'
-
-set -gx PATH ~/bin ~/.cl/bin /usr/local/bin $PATH
-set -gx PATH $HOME/.cask/bin $PATH
-set -gx PATH $HOME/google-cloud-sdk/bin $PATH
-set -gx PATH $HOME/Dropbox/code/clarity/clarity/bin $PATH
-
-set -gx PATH $HOME/.rbenv/bin $PATH
-rbenv init - | source
 
 set -gx GOPATH $HOME/go
 set -gx PATH $HOME/go/bin $PATH
@@ -75,21 +58,14 @@ alias lan_ip="ifconfig | ruby -e ' puts STDIN.read.scan(/inet ((\d+\.?){4}).*bro
 alias ag='ag --color --color-line-number 35 --color-path 34 --color-match 31'
 alias psql='psql --host=localhost'
 alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
-alias tt='mux start default'
-
-set -U fish_user_abbreviations
+alias tt='tmuxinator start default'
 
 abbr g 'git'
 abbr t 'tmux'
-abbr z 'zeus'
 abbr py 'python'
 abbr dm 'docker-machine'
 abbr b 'bundle'
 
 # Commonly used locations
-set -U platform ~/code/platform
-set -U bedrock ~/code/bedrock
-set -U ci ~/code/platform-ci
 set -U code ~/code
-set -U jarvis ~/code/platform-ci/jarvis
 set -U dotfiles ~/dotfiles
