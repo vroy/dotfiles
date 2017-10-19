@@ -3,7 +3,7 @@
 	name = Vincent Roy
 
 [core]
-  editor = emacs
+  editor = emacs -nw
 	pager = less -r
 
 [color]
