@@ -41,6 +41,7 @@ set -gx EDITOR 'emacs'
 set -gx GOPATH $HOME/go
 set -gx PATH $GOBIN $PATH
 set -gx GOBIN $GOPATH/bin
+set -gx PATH $HOME/bin $PATH
 
 alias ls='ls -G'
 alias ll='ls -l'
