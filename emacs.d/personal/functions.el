@@ -72,14 +72,32 @@ Passes ARG to command `kill-whole-line' when provided."
   (progn
     (switch-to-buffer
      (get-buffer-create (generate-new-buffer-name "*scratch*")))
-    (emacs-lisp-mode)))
+    (markdown-mode)))
+
+(defun scratchme()
+  "Create a new scratch buffer."
+  (interactive)
+  (vince-create-scratch-buffer))
+
 
 
 (defun js2space ()
   (interactive)
   (setq js-indent-level 2))
 
+(defun js4space ()
+  (interactive)
+  (setq js-indent-level 4))
+
 
 (defun marked ()
   (interactive)
   (start-process "marked" "marked" "open" "-a" "Marked" (buffer-file-name)))
+
+(defun typora ()
+  (interactive)
+  (start-process "typora" "typora" "open" "-a" "Typora" (buffer-file-name)))
+
+(defun umlme ()
+  (interactive)
+  (start-process "umlme" "umlme" "umlme" "--open"))

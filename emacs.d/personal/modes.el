@@ -42,9 +42,10 @@
 
 (add-to-list 'auto-mode-alist '("/etc/nginx/sites-available/.*" . nginx-mode))
 
+(add-to-list 'auto-mode-alist '("Jenkinsfile$" . groovy-mode) )
 
 (add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
 (add-to-list 'auto-mode-alist '("\\.patch$" . diff-mode))
 (add-to-list 'auto-mode-alist '("\\.diff$" . diff-mode))
 
-(add-to-list 'auto-mode-alist '("\\.js$" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))

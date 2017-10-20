@@ -1,11 +1,17 @@
 ;; no startup msg
 (setq inhibit-startup-message t)
-
+(setq initial-major-mode 'markdown-mode)
+(setq initial-scratch-message "")
 
 ;; no toolbar in GUI mode
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
 
+
+;; disable word wrap
+(auto-fill-mode -1)
+(remove-hook 'text-mode-hook #'turn-on-auto-fill)
+(turn-off-auto-fill)
 
 ;; Disable blinking cursor...
 (blink-cursor-mode -1)
@@ -146,3 +152,19 @@
 (flycheck-add-mode 'javascript-eslint 'javascript-mode)
 
 (setq-default flycheck-temp-prefix ".flycheck")
+
+;;
+;; https://gist.github.com/the-kenny/267162
+;; http://emacs.stackexchange.com/a/10963
+;;
+;;(defun copy-from-osx ()
+;;  (shell-command-to-string "pbpaste"))
+
+;;(defun paste-to-osx (text &optional push)
+;;  (let ((process-connection-type nil))
+;;    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+;;      (process-send-string proc text)
+;;      (process-send-eof proc))))
+
+;;(setq interprogram-cut-function 'paste-to-osx)
+;;(setq interprogram-paste-function 'copy-from-osx)
