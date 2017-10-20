@@ -66,20 +66,13 @@ Passes ARG to command `kill-whole-line' when provided."
 
 
 ;; https://github.com/bbatsov/prelude/blob/b9000702b2ac8216a8bfeea645fde6bb0c1fc7bc/core/prelude-core.el#L391
-(defun vince-create-scratch-buffer ()
+(defun scratchme ()
   "Create a new scratch buffer."
   (interactive)
   (progn
     (switch-to-buffer
      (get-buffer-create (generate-new-buffer-name "*scratch*")))
     (markdown-mode)))
-
-(defun scratchme()
-  "Create a new scratch buffer."
-  (interactive)
-  (vince-create-scratch-buffer))
-
-
 
 (defun js2space ()
   (interactive)
