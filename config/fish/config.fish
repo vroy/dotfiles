@@ -83,6 +83,15 @@ function sfind
   find . -name $argv | grep -v '^\.\/\.git'
 end
 
+# Configure symnav to support symlink navigation in fish (without expansion).
+# https://github.com/externl/fish-symnav
+function fish_user_key_bindings
+  bind -M default \t '__symnav_complete'
+  bind -M default \r '__symnav_execute'
+  bind -M default \n '__symnav_execute'
+end
+set symnav_execute_substitution 1
+
 set -gx EDITOR 'emacs -nw'
 
 set -gx GOPATH $HOME/go
