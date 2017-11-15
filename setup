@@ -1,0 +1,86 @@
+#!/bin/bash
+
+DIR=$( cd "$( dirname "$0" )" && pwd )
+DOTFILES=$DIR/dotfiles
+
+linked() {
+    ln -shf "$DOTFILES/$1" "$HOME/$1"
+}
+
+dotfiles() {
+    echo Linking all dotfiles to home directory
+    linked .emacs.d
+    linked .gitconfig
+    linked .tmux.conf
+
+    mkdir -p ~/.config
+    linked .config/fish/
+
+    # mkdir -p ~/Library/Application\ Support/Code/User
+    # linked "Library/Application Support/Code/User/settings.json"
+    # linked "Library/Application Support/Code/User/keybindings.json"
+}
+
+updateBrew() {
+    which brew
+    if [ $? -ne 0 ] ; then
+        echo Installing Homebrew
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
+
+    echo Updating Homebrew
+    brew update
+    brew upgrade
+}
+
+brewBundle() {
+    echo Installing packages from Brewfile
+    brew bundle --verbose
+}
+
+iTermConfig() {
+    # Specify the preferences directory
+    defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$DIR/dotfiles/iterm"
+
+    # Tell iTerm2 to use the custom preferences in the directory
+    defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+}
+
+fish() {
+    echo Setting shell to fish
+    # Add fish to shells
+    grep fish /etc/shells
+    if [ $? -ne 0 ]; then
+        sudo sh -c "echo /usr/local/bin/fish >> /etc/shells"
+    fi
+
+    # Change shell to fish
+    chsh -s /usr/local/bin/fish
+    mkdir -p ~/bin
+}
+
+installGems() {
+    gem install git-up
+    gem install tmuxinator
+}
+
+installOthers() {
+    go get github.com/vroy/git-gb
+}
+
+osxDefaults() {
+    echo Mac OS Defaults
+
+    # Show all files
+    defaults write com.apple.finder AppleShowAllFiles YES
+    defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+}
+
+# dotfiles
+updateBrew
+brewBundle
+installGems
+installOthers
+iTermConfig
+fish
+osxDefaults
