@@ -19,11 +19,6 @@ brew "wget"
 brew "openssl"
 brew "htop"
 
-# Editors
-brew "emacs"
-cask "visual-studio-code"
-cask "intellij-idea-ce"
-
 # Languages
 brew "go"
 cask "java8"
@@ -33,20 +28,6 @@ brew "python3"
 brew "node"
 brew "ruby"
 
-# Apps
-cask "iterm2"
-cask "superduper"
-cask "alfred"
-cask "dropbox"
-cask "typora"
-cask "marked"
-
-# Unproductivity
-cask "vlc"
-
 # Devtools
 brew "ansible"
 cask "docker"
-
-# Browser
-cask "google-chrome"
