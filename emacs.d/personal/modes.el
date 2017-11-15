@@ -25,6 +25,8 @@
 (add-to-list 'auto-mode-alist '("\\.coffee\\.erb$" . coffee-mode) )
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode) )
 
+(add-to-list 'auto-mode-alist '("\\.vue$" . vue-mode) )
+
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode) )
 
 (add-to-list 'auto-mode-alist '("\\.yml\\.?" . yaml-mode) )
