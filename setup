@@ -74,6 +74,8 @@ osxDefaults() {
     # Show all files
     defaults write com.apple.finder AppleShowAllFiles YES
     defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+    killall Finder /System/Library/CoreServices/Finder.app
 }
 
 # dotfiles
