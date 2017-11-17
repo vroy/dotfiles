@@ -31,3 +31,4 @@ brew "ruby"
 # Devtools
 brew "ansible"
 cask "docker"
+cask "visual-studio-code"
