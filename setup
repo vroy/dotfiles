@@ -80,6 +80,17 @@ osxDefaults() {
     ./os_x_defaults.sh
 }
 
+codeExtensions() {
+    echo Installing VS Code Extensions
+    code --install-extension hiro-sun.vscode-emacs
+    code --install-extension slevesque.vscode-multiclip
+    code --install-extension lukehoban.Go
+    code --install-extension PeterJausovec.vscode-docker
+    code --install-extension ms-python.python
+    code --install-extension rebornix.ruby
+    code --install-extension streetsidesoftware.code-spell-checker
+}
+
 mkdir -p ~/bin
 
 dotfiles
@@ -90,3 +101,4 @@ installOthers
 iTermConfig
 setFishShell
 osxDefaults
+codeExtensions
