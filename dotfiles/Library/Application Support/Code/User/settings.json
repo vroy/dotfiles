@@ -4,6 +4,8 @@
 
     "explorer.openEditors.visible": 0,
 
+    "files.trimTrailingWhitespace": true,
+
     "workbench.colorTheme": "Tomorrow Night Eighties",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.tips.enabled": false,
