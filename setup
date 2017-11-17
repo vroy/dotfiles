@@ -89,6 +89,7 @@ codeExtensions() {
     code --install-extension ms-python.python
     code --install-extension rebornix.ruby
     code --install-extension streetsidesoftware.code-spell-checker
+    code --install-extension aStonedPenguin.tomorrow-night-eighties-contrast
 }
 
 mkdir -p ~/bin
