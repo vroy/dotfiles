@@ -1,0 +1,23 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+  {
+    "key": "alt+y",
+    "command": "emacs.C-y",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl-y",
+    "command": "emacs.C-y",
+    "when": "editorTextFocus"
+  },
+  // {
+  //   "key": "alt-w",
+  //   "command": "multiclip.copy",
+  //   "when": "editorTextFocus"
+  // },
+  {
+    "key": "ctrl+shift+-",
+    "command": "undo",
+    "when": "editorTextFocus"
+  }
+]

@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+set -e
 
 # Based on https://github.com/henrik/dotfiles/blob/master/extras/os_x_defaults.sh
 
@@ -37,6 +39,10 @@ defaults write com.apple.finder ShowPathbar -bool true
 
 echo "Show Status bar in Finder."
 defaults write com.apple.finder ShowStatusBar -bool true
+
+echo "Show all files in Finder."
+defaults write com.apple.finder AppleShowAllFiles YES
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 echo "Use current directory as default search scope in Finder."
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 DIR=$( cd "$( dirname "$0" )" && pwd )
 DOTFILES=$DIR/dotfiles
 
@@ -8,17 +10,24 @@ linked() {
 }
 
 dotfiles() {
-    echo Linking all dotfiles to home directory
-    linked .emacs.d
-    linked .gitconfig
-    linked .tmux.conf
+    echo "Linking all dotfiles to home directory"
+
+    linked ".irbrc"
+    linked ".gitconfig"
+    linked ".tmux.conf"
+    linked ".tmuxinator"
+    linked ".emacs.d"
+    linked "gemrc"
 
     mkdir -p ~/.config
-    linked .config/fish/
+    linked ".config/fish"
 
-    # mkdir -p ~/Library/Application\ Support/Code/User
-    # linked "Library/Application Support/Code/User/settings.json"
-    # linked "Library/Application Support/Code/User/keybindings.json"
+    mkdir -p ~/Library/Application\ Support/Code/User
+    linked "Library/Application Support/Code/User/settings.json"
+    linked "Library/Application Support/Code/User/keybindings.json"
+
+    mkdir -p ~/Library/KeyBindings
+    linked "Library/KeyBindings/DefaultKeyBinding.dict"
 }
 
 updateBrew() {
@@ -46,17 +55,15 @@ iTermConfig() {
     defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 }
 
-fish() {
+setFishShell() {
     echo Setting shell to fish
     # Add fish to shells
     grep fish /etc/shells
     if [ $? -ne 0 ]; then
         sudo sh -c "echo /usr/local/bin/fish >> /etc/shells"
+        # Change shell to fish
+        chsh -s /usr/local/bin/fish
     fi
-
-    # Change shell to fish
-    chsh -s /usr/local/bin/fish
-    mkdir -p ~/bin
 }
 
 installGems() {
@@ -70,19 +77,16 @@ installOthers() {
 
 osxDefaults() {
     echo Mac OS Defaults
-
-    # Show all files
-    defaults write com.apple.finder AppleShowAllFiles YES
-    defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-
-    killall Finder /System/Library/CoreServices/Finder.app
+    ./os_x_defaults.sh
 }
 
-# dotfiles
+mkdir -p ~/bin
+
+dotfiles
 updateBrew
 brewBundle
 installGems
 installOthers
 iTermConfig
-fish
+setFishShell
 osxDefaults
