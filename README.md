@@ -1,21 +1,10 @@
 # Dotfiles
 
-Synced through dropbox. Currently set up manually:
+Collection of my dotfiles and configurations.
 
-    ln -s ~/Dropbox/syncs/dotfiles/dotgitconfig .gitconfig
-
-
-### Emacs keybindings for all.
-
-Add this file: `~/Library/KeyBindings/DefaultKeyBinding.dict`
+## Getting Started
 
 ```
-{
-    "~d" = "deleteWordForward:";
-    "^w" = "deleteWordBackward:";
-    "~f" = "moveWordForward:";
-    "~b" = "moveWordBackward:";
-}
+xcode-select --install
+./setup
 ```
-
-[source](http://blog.sensible.io/2012/10/19/mac-os-x-emacs-style-keybindings-everywhere.html)
