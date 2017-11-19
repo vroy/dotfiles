@@ -25,16 +25,11 @@
     "when": "editorTextFocus"
   },
   {
-    "key": "cmd+]",
-    "command": "editor.action.indentLines",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
     "key": "cmd+[",
-    "command": "workbench.action.previousEditor"
+    "command": "workbench.action.focusPreviousGroup"
   },
   {
     "key": "cmd+]",
-    "command": "workbench.action.nextEditor"
+    "command": "workbench.action.focusNextGroup"
   }
 ]
