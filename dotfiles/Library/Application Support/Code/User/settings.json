@@ -1,10 +1,13 @@
 {
     "editor.tabSize": 2,
     "editor.fontSize": 14,
+    "editor.cursorStyle": "block",
 
     "explorer.openEditors.visible": 0,
 
     "files.trimTrailingWhitespace": true,
+
+    "multiclip.bufferSize": 200,
 
     "workbench.colorTheme": "Tomorrow Night Eighties",
     "workbench.startupEditor": "newUntitledFile",
