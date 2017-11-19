@@ -1,23 +1,40 @@
-// Place your key bindings in this file to overwrite the defaults
 [
   {
     "key": "alt+y",
-    "command": "emacs.C-y",
+    "command": "multiclip.paste",
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl-y",
-    "command": "emacs.C-y",
+    "key": "ctrl+y",
+    "command": "multiclip.paste",
     "when": "editorTextFocus"
   },
-  // {
-  //   "key": "alt-w",
-  //   "command": "multiclip.copy",
-  //   "when": "editorTextFocus"
-  // },
+  {
+    "key": "ctrl+w",
+    "command": "multiclip.cut",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+w",
+    "command": "multiclip.copy",
+    "when": "editorTextFocus"
+  },
   {
     "key": "ctrl+shift+-",
     "command": "undo",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+]",
+    "command": "editor.action.indentLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+[",
+    "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "cmd+]",
+    "command": "workbench.action.nextEditor"
   }
 ]
