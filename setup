@@ -40,6 +40,10 @@ updateBrew() {
     echo Updating Homebrew
     brew update
     brew upgrade
+
+    echo "Creating /usr/local/Frameworks"
+    sudo mkdir -p /usr/local/Frameworks
+    sudo chown $(whoami):admin /usr/local/Frameworks
 }
 
 brewBundle() {
@@ -93,11 +97,20 @@ codeExtensions() {
     code --install-extension octref.vetur
 }
 
+configurePython() {
+    echo "Updating pip"
+    pip3 install --upgrade pip setuptools wheel
+
+    pip3 install requests
+}
+
+
 mkdir -p ~/bin
 
 dotfiles
 updateBrew
 brewBundle
+configurePython
 installGems
 installOthers
 iTermConfig
