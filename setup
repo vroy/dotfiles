@@ -17,7 +17,9 @@ dotfiles() {
     linked ".tmux.conf"
     linked ".tmuxinator"
     linked ".emacs.d"
-    linked "gemrc"
+    linked ".gemrc"
+
+    linked "bin"
 
     mkdir -p ~/.config
     linked ".config/fish"
@@ -73,6 +75,7 @@ setFishShell() {
 installGems() {
     gem install git-up
     gem install tmuxinator
+    gem install octokit
 }
 
 installOthers() {
@@ -103,9 +106,6 @@ configurePython() {
 
     pip3 install requests
 }
-
-
-mkdir -p ~/bin
 
 dotfiles
 updateBrew
