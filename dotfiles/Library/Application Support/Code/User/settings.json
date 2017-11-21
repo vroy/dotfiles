@@ -2,6 +2,7 @@
     "editor.tabSize": 2,
     "editor.fontSize": 14,
     "editor.cursorStyle": "block",
+    "editor.autoClosingBrackets": false,
 
     "explorer.openEditors.visible": 0,
 
