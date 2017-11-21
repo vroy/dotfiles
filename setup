@@ -90,6 +90,7 @@ codeExtensions() {
     code --install-extension rebornix.ruby
     code --install-extension streetsidesoftware.code-spell-checker
     code --install-extension aStonedPenguin.tomorrow-night-eighties-contrast
+    code --install-extension octref.vetur
 }
 
 mkdir -p ~/bin
