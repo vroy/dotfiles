@@ -32,3 +32,6 @@ brew "ruby"
 brew "ansible"
 cask "docker"
 cask "visual-studio-code"
+
+# Apps
+cask "gitify"
