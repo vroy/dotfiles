@@ -3,6 +3,7 @@ tap "caskroom/versions"
 tap "homebrew/bundle"
 tap "homebrew/core"
 tap "homebrew/versions"
+tap "wata727/tflint"
 
 # Command line
 brew "fish"
@@ -31,6 +32,7 @@ brew "ruby"
 # Devtools
 brew "ansible"
 cask "docker"
+brew "tflint"
 cask "visual-studio-code"
 
 # Apps

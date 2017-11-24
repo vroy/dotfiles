@@ -8,14 +8,25 @@
         "deduped",
         "devtool",
         "devtools",
+        "format",
+        "gradlew",
         "hooks",
+        "intelli",
+        "j",
+        "kapt",
         "lifecycle",
         "mixins",
         "multiclip",
         "netlify",
+        "on",
+        "postgre",
+        "requery",
+        "save",
         "singleline",
         "size",
         "splitted",
+        "sql",
+        "terraform",
         "treeshaking",
         "vetur"
     ],
@@ -38,7 +49,19 @@
 
     "files.trimTrailingWhitespace": true,
 
+    "markdown.extension.preview.autoShowPreviewToSide": true,
+    "markdown.extension.quickStyling": true,
+
     "multiclip.bufferSize": 200,
+
+    "terraform.formatOnSave": true,
+    "terraform.formatVarsOnSave": true,
+    "terraform.indexing": {
+        "enabled": true,
+        "indexerPath": "terraform-index",
+        "liveIndexing": true,
+        "delay": 500
+    },
 
     "workbench.startupEditor": "newUntitledFile",
     "workbench.tips.enabled": false
