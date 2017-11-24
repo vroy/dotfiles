@@ -40,6 +40,7 @@
   worklog = log --format='%C(green)%ci %C(yellow) %h %C(blue) %cn %C(reset) %s' --author='Vincent Roy'
   b = branch
   g = gb
+	up = pull --rebase --autostash
 
 [difftool]
 	prompt = false
@@ -59,3 +60,7 @@ protocol = https
 	smudge = git-media-smudge %f
 [credential]
 	helper = osxkeychain
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true

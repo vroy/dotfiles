@@ -73,7 +73,6 @@ setFishShell() {
 }
 
 installGems() {
-    gem install git-up
     gem install tmuxinator
     gem install octokit
 }
