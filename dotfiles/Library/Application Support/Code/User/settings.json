@@ -1,8 +1,38 @@
 {
+    "cSpell.showStatus": false,
+    "cSpell.userWords": [
+        "buffer",
+        "chunkhash",
+        "codesplit",
+        "contenthash",
+        "deduped",
+        "devtool",
+        "devtools",
+        "hooks",
+        "lifecycle",
+        "mixins",
+        "multiclip",
+        "netlify",
+        "singleline",
+        "size",
+        "splitted",
+        "treeshaking",
+        "vetur"
+    ],
+
+    "docker.showExplorer": false,
+
     "editor.tabSize": 2,
     "editor.fontSize": 14,
     "editor.cursorStyle": "block",
     "editor.autoClosingBrackets": false,
+
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "vue",
+        "vue-html"
+    ],
 
     "explorer.openEditors.visible": 0,
 
@@ -10,9 +40,6 @@
 
     "multiclip.bufferSize": 200,
 
-    "workbench.colorTheme": "Tomorrow Night Eighties",
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.tips.enabled": false,
-
-    "docker.showExplorer": false
+    "workbench.tips.enabled": false
 }
