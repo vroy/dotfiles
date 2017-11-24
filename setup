@@ -88,15 +88,26 @@ osxDefaults() {
 
 codeExtensions() {
     echo Installing VS Code Extensions
+
+    # Editor
+    code --install-extension christian-kohler.path-intellisense
+    code --install-extension christian-kohler.npm-intellisense
     code --install-extension hiro-sun.vscode-emacs
     code --install-extension slevesque.vscode-multiclip
-    code --install-extension lukehoban.Go
-    code --install-extension PeterJausovec.vscode-docker
-    code --install-extension ms-python.python
-    code --install-extension rebornix.ruby
     code --install-extension streetsidesoftware.code-spell-checker
-    code --install-extension aStonedPenguin.tomorrow-night-eighties-contrast
+
+
+    # Languages
+    code --install-extension lukehoban.Go
+    code --install-extension ms-python.python
+    code --install-extension PeterJausovec.vscode-docker
+    code --install-extension rebornix.ruby
+    code --install-extension robinbentley.sass-indented
+
+    # VueJS and JavaScript
+    code --install-extension dbaeumer.vscode-eslint
     code --install-extension octref.vetur
+    code --install-extension dariofuzinato.vue-peek
 }
 
 configurePython() {
