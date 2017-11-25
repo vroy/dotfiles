@@ -20,6 +20,7 @@
         "netlify",
         "on",
         "postgre",
+        "readonly",
         "requery",
         "save",
         "singleline",
@@ -28,7 +29,8 @@
         "sql",
         "terraform",
         "treeshaking",
-        "vetur"
+        "vetur",
+        "vuex"
     ],
 
     "docker.showExplorer": false,

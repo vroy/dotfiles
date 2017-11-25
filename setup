@@ -93,6 +93,7 @@ codeExtensions() {
 
     code --install-extension christian-kohler.path-intellisense
     code --install-extension christian-kohler.npm-intellisense
+    code --install-extension EditorConfig.editorconfig
     code --install-extension hiro-sun.vscode-emacs
     code --install-extension slevesque.vscode-multiclip
     code --install-extension streetsidesoftware.code-spell-checker
