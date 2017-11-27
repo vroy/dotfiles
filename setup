@@ -96,7 +96,6 @@ codeExtensions() {
     code --install-extension EditorConfig.editorconfig
     code --install-extension hiro-sun.vscode-emacs
     code --install-extension slevesque.vscode-multiclip
-    code --install-extension streetsidesoftware.code-spell-checker
 
     # Languages
     code --install-extension bierner.markdown-preview-github-styles
