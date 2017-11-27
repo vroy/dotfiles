@@ -119,6 +119,9 @@ configurePython() {
     pip3 install --upgrade pip setuptools wheel
 
     pip3 install requests
+
+    # For VS Code
+    pip2 install pylint
 }
 
 dotfiles

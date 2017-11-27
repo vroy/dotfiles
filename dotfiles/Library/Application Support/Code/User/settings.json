@@ -21,6 +21,9 @@
 
     "multiclip.bufferSize": 200,
 
+    "python.linting.lintOnSave": false,
+    "python.linting.pylintPath": "/usr/local/bin/pylint",
+
     "terraform.formatOnSave": true,
     "terraform.formatVarsOnSave": true,
     "terraform.indexing": {
