@@ -17,7 +17,6 @@
 
     "files.trimTrailingWhitespace": true,
 
-    "markdown.extension.preview.autoShowPreviewToSide": true,
     "markdown.extension.quickStyling": true,
 
     "multiclip.bufferSize": 200,
