@@ -2,9 +2,14 @@
     "docker.showExplorer": false,
 
     "editor.tabSize": 2,
-    "editor.fontSize": 14,
+    "editor.fontSize": 16,
+    "editor.lineHeight": 19.5,
     "editor.cursorStyle": "block",
     "editor.autoClosingBrackets": false,
+    "editor.minimap.enabled": false,
+    "editor.lineNumbers": "off",
+    "editor.showFoldingControls": false,
+    "editor.folding": false,
 
     "eslint.validate": [
         "javascript",
