@@ -91,6 +91,10 @@ set -gx GOBIN $GOPATH/bin
 set -gx PATH $HOME/bin $PATH
 set -gx PATH $HOME/code/tools $PATH
 
+if test -d $HOME/code/switch
+  set -gx PATH $HOME/code/switch/bin $PATH
+end
+
 set -gx JARVIS_USERNAME vincentroy
 
 set -gx DOCKER_GROUP_ID 50
