@@ -15,6 +15,13 @@
     ],
     "main": "./extension",
     "contributes": {
+        "commands": [
+            {
+                "command": "vroy.marked",
+                "title": "Marked",
+                "category": "vroy"
+            }
+        ],
         "keybindings": [
             {
                 "key": "alt+c",

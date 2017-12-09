@@ -1,5 +1,11 @@
 const vscode = require('vscode');
+
+const child_process = require("child_process");
+const path = require("path");
+
 const PromiseSeries = require('promise-series');
+
+// TODO word forward should skip underscores
 
 function wordCase(cb) {
     return function() {
@@ -57,7 +63,20 @@ var commands = {
     "vroy.killLine": macro(
         "expandLineSelection",
         "multiclip.cut"
-    )
+    ),
+
+    "vroy.marked": function() {
+        var filePath = vscode.window.activeTextEditor.document.fileName;
+        var fileName = path.basename(filePath);
+
+        // filePath and fileName are the same in a new untitled document.
+        if (filePath === fileName) {
+            vscode.window.showErrorMessage("Cannot open unsaved document in Marked.");
+            return;
+        }
+
+        child_process.exec(`open -a Marked ${filePath}`);
+    }
 }
 
 function activate(context) {
