@@ -1,0 +1,5 @@
+#!/bin/bash
+
+DIR=$HOME/dotfiles/uuid-base62-converter
+
+cd $DIR; java -cp ./classpath/friendly-id-1.0.0.jar:./out/base62.jar Base62Kt $@

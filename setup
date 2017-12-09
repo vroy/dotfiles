@@ -124,6 +124,10 @@ configurePython() {
     pip2 install pylint
 }
 
+buildBase62() {
+    cd uuid-base62-converter; ./build.sh
+}
+
 dotfiles
 updateBrew
 brewBundle
@@ -134,3 +138,4 @@ iTermConfig
 setFishShell
 osxDefaults
 codeExtensions
+buildBase62
