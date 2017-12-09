@@ -31,7 +31,10 @@ brew "ruby"
 
 # Devtools
 brew "ansible"
+brew "awscli"
 cask "docker"
+brew "packer"
+brew "terraform"
 brew "tflint"
 cask "visual-studio-code"
 
