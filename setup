@@ -33,6 +33,8 @@ dotfiles() {
 }
 
 updateBrew() {
+    set +e
+
     which brew
     if [ $? -ne 0 ] ; then
         echo Installing Homebrew
@@ -43,9 +45,22 @@ updateBrew() {
     brew update
     brew upgrade
 
-    echo "Creating /usr/local/Frameworks"
-    sudo mkdir -p /usr/local/Frameworks
-    sudo chown $(whoami):admin /usr/local/Frameworks
+    # Create /usr/local/Frameworks/ required for python.
+    FW="/usr/local/Frameworks"
+
+    stat "$FW" > /dev/null 2>&1
+    if [ $? -ne 0 ]; then
+        echo "[sudo] Creating $FW"
+        sudo mkdir -p "$FW"
+    fi
+
+    MY_ID=$(id -u)
+    FW_ID=$(stat -f "%u" "$FW")
+    if [[ "$MY_ID" -ne "$FW_ID" ]]; then
+        echo "[sudo] Changing ownership of $FW"
+        sudo chown $(whoami):admin "$FW"
+    fi
+    set -e
 }
 
 brewBundle() {
