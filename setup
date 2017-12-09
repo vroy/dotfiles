@@ -97,6 +97,17 @@ installGems() {
 
 installOthers() {
     go get github.com/vroy/git-gb
+
+    # terraform-index, used with the mauve.terraform extension
+    set +e
+    which terraform-index
+    if [ $? -ne 0 ]; then
+        set -e
+        wget -O /tmp/terraform-index.zip https://github.com/mauve/terraform-index/releases/download/0.0.2/terraform-index-0.0.2-macos-amd64.zip
+        unzip /tmp/terraform-index.zip -d /usr/local/bin
+        rm /tmp/terraform-index.zip
+    fi
+    set -e
 }
 
 osxDefaults() {
