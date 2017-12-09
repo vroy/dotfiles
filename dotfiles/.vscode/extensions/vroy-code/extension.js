@@ -46,8 +46,7 @@ var commands = {
     ),
 
     "vroy.cut": macro(
-        "multiclip.cut",
-        "emacs.exitMarkMode"
+        "multiclip.cut"
     ),
 
     "vroy.cutToEndOfLine": macro(

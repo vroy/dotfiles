@@ -13,11 +13,25 @@
     "command": "-emacs.M-w",
     "when": "editorTextFocus"
   },
-
   {
     "key": "ctrl+w",
-    "command": "-emacs.C-w",
-    "when": "editorTextFocus && !editorReadonly"
+    "command": "-emacs.C-w"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-closeFindWidget"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.files.saveAs"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.files.saveAs"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.switchWindow"
   },
 
   // clipboard and kill ring
@@ -77,5 +91,10 @@
   {
     "key": "ctrl+x ctrl+f",
     "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-emacs.C-w",
+    "when": "editorTextFocus && !editorReadonly"
   }
 ]

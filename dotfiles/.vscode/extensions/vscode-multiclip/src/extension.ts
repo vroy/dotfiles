@@ -65,8 +65,15 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.commands.executeCommand("editor.action.clipboardCutAction");
 	}));
 	disposables.push( vscode.commands.registerCommand('multiclip.cut', () => {
-		newCopyBuf(Window.activeTextEditor);
-		vscode.commands.executeCommand("editor.action.clipboardCutAction");
+		let range = new Range(Window.activeTextEditor.selection.start, Window.activeTextEditor.selection.end);
+		if (!range.isEmpty) {
+			newCopyBuf(Window.activeTextEditor);
+
+			vscode.commands.executeCommand("editor.action.clipboardCopyAction").then(function() {
+				Window.activeTextEditor.edit((builder) => builder.replace(range, ""));
+				vscode.commands.executeCommand("emacs.exitMarkMode");
+			});
+		}
 	}));
 
 	function doPaste(txt: string) {
