@@ -28,6 +28,7 @@ dotfiles() {
     linked "Library/Application Support/Code/User/settings.json"
     linked "Library/Application Support/Code/User/keybindings.json"
     linked ".vscode/extensions/vroy-code"
+    linked ".vscode/extensions/vscode-multiclip"
 
     mkdir -p ~/Library/KeyBindings
     linked "Library/KeyBindings/DefaultKeyBinding.dict"
@@ -111,7 +112,6 @@ codeExtensions() {
     code --install-extension christian-kohler.npm-intellisense
     code --install-extension EditorConfig.editorconfig
     code --install-extension lfs.vscode-emacs-friendly
-    code --install-extension slevesque.vscode-multiclip
     code --install-extension ziyasal.vscode-open-in-github
 
     # Languages

@@ -46,7 +46,6 @@
         "promise-series": "^1.0.0"
     },
     "extensionDependencies": [
-        "lfs.vscode-emacs-friendly",
-        "slevesque.vscode-multiclip"
+        "lfs.vscode-emacs-friendly"
     ]
 }
