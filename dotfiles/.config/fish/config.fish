@@ -92,7 +92,7 @@ set -gx PATH $HOME/bin $PATH
 set -gx PATH $HOME/code/tools $PATH
 
 if test -d $HOME/code/switch
-  set -gx PATH $HOME/code/switch/bin $PATH
+  set -gx PATH $HOME/code/switch/devops/bin $PATH
 end
 
 set -gx JARVIS_USERNAME vincentroy
