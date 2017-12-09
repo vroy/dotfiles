@@ -1,11 +1,14 @@
 #!/usr/bin/env ruby
 
+require "keychain"
 require "octokit"
+
+access = Keychain.internet_passwords.where(server: "github.com").first
 
 # Configure from profile?
 Octokit.configure do |c|
-  c.login = "vroy"
-  c.password = "616956167cc755be75757a41725395711e1160b9"
+  c.login = access.account
+  c.password = access.password
 end
 
 remote = `git config --get remote.origin.url`
