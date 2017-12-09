@@ -27,6 +27,7 @@ dotfiles() {
     mkdir -p ~/Library/Application\ Support/Code/User
     linked "Library/Application Support/Code/User/settings.json"
     linked "Library/Application Support/Code/User/keybindings.json"
+    linked ".vscode/extensions/vroy-code"
 
     mkdir -p ~/Library/KeyBindings
     linked "Library/KeyBindings/DefaultKeyBinding.dict"
@@ -105,16 +106,18 @@ codeExtensions() {
     echo Installing VS Code Extensions
 
     # Editor
-
     code --install-extension christian-kohler.path-intellisense
     code --install-extension christian-kohler.npm-intellisense
     code --install-extension EditorConfig.editorconfig
-    code --install-extension hiro-sun.vscode-emacs
+    code --install-extension lfs.vscode-emacs-friendly
     code --install-extension slevesque.vscode-multiclip
+    code --install-extension ziyasal.vscode-open-in-github
 
     # Languages
+    code --install-extension bierner.markdown-mermaid
     code --install-extension bierner.markdown-preview-github-styles
     code --install-extension erd0s.terraform-autocomplete
+    code --install-extension JPTarquino.postgresql
     code --install-extension lukehoban.Go
     code --install-extension mauve.terraform
     code --install-extension ms-python.python

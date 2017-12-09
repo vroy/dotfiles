@@ -1,0 +1,52 @@
+{
+    "name": "vroy-code",
+    "displayName": "vroy-code",
+    "description": "My custom extension",
+    "version": "0.0.1",
+    "publisher": "vroy",
+    "engines": {
+        "vscode": "^1.18.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "keybindings": [
+            {
+                "key": "alt+c",
+                "command": "vroy.capitalizeWord",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "alt+l",
+                "command": "vroy.lowercaseWord",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "alt+u",
+                "command": "vroy.uppercaseWord",
+                "when": "editorTextFocus"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "eslint": "^4.6.1",
+        "@types/node": "^7.0.43"
+    },
+    "dependencies": {
+        "promise-series": "^1.0.0"
+    },
+    "extensionDependencies": [
+        "lfs.vscode-emacs-friendly",
+        "slevesque.vscode-multiclip"
+    ]
+}

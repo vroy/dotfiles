@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+
+require "octokit"
+
+# Configure from profile?
+Octokit.configure do |c|
+  c.login = "vroy"
+  c.password = "616956167cc755be75757a41725395711e1160b9"
+end
+
+remote = `git config --get remote.origin.url`
+org, repo = remote.scan(/.*\/(.+)\/(.+)\.git/).first
+
+# TODO: Get from command
+
+current_branch_name = ARGV[0] || `git rev-parse --abbrev-ref HEAD`.strip
+
+pull_requests = Octokit.pull_requests("#{org}/#{repo}", { head: "#{org}:#{current_branch_name}" })
+
+if pull_requests.size > 1
+  puts "More than one pull request found for branch '#{current_branch_name}' in #{org}/#{repo}:"
+  puts
+
+  pull_requests.each do |pr|
+    puts "* #{pr.html_url}"
+  end
+
+  exit! 1
+end
+
+pr = pull_requests.first
+
+if pr.nil?
+  `open "https://github.com/#{org}/#{repo}/compare/#{current_branch_name}?expand=1"`
+else
+  `open "#{pr.html_url}"`
+end

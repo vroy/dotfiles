@@ -1,22 +1,62 @@
 [
+  // remove conflicting shortcuts explicitly
+  {
+    "key": "ctrl+k",
+    "command": "-deleteAllRight"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "-emacs.C-k"
+  },
+  {
+    "key": "alt+w",
+    "command": "-emacs.M-w",
+    "when": "editorTextFocus"
+  },
+
+  {
+    "key": "ctrl+w",
+    "command": "-emacs.C-w",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+
+  // clipboard and kill ring
   {
     "key": "alt+y",
-    "command": "multiclip.paste",
+    "command": "vroy.paste",
     "when": "editorTextFocus"
   },
   {
     "key": "ctrl+y",
-    "command": "multiclip.paste",
+    "command": "vroy.paste",
     "when": "editorTextFocus"
   },
   {
     "key": "ctrl+w",
-    "command": "multiclip.cut",
+    "command": "vroy.cut",
     "when": "editorTextFocus"
   },
   {
     "key": "alt+w",
-    "command": "multiclip.copy",
+    "command": "vroy.copy",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+k",
+    "command": "vroy.killLine",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "vroy.cutToEndOfLine",
+    "when": "editorTextFocus"
+  },
+
+  // misc. editor shortcuts
+
+  {
+    "key": "ctrl+c ctrl+k",
+    "command": "editor.action.commentLine",
     "when": "editorTextFocus"
   },
   {
@@ -24,6 +64,8 @@
     "command": "undo",
     "when": "editorTextFocus"
   },
+
+  // file navigation
   {
     "key": "cmd+[",
     "command": "workbench.action.focusPreviousGroup"
@@ -31,5 +73,9 @@
   {
     "key": "cmd+]",
     "command": "workbench.action.focusNextGroup"
+  },
+  {
+    "key": "ctrl+x ctrl+f",
+    "command": "workbench.action.quickOpen"
   }
 ]
