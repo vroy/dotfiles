@@ -20,7 +20,7 @@ function macro(...commands) {
     return function() {
         let series = new PromiseSeries();
         for (let command of commands) {
-            series.add(() => { vscode.commands.executeCommand(command) })
+            series.add(() => { return vscode.commands.executeCommand(command) })
         }
         return series.run()
     }
