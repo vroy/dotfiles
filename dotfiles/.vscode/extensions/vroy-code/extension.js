@@ -32,6 +32,33 @@ function macro(...commands) {
     }
 }
 
+function editor() {
+    return vscode.window.activeTextEditor;
+}
+
+function cursor() {
+    return editor().selection.active;
+}
+
+function range() {
+    let selection = editor().selection;
+    return new vscode.Range(selection.start, selection.end);
+}
+
+function text() {
+    return editor().document.getText(range());
+}
+
+function deleteCurrentSelection() {
+    return editor().edit(builder => { builder.replace(range(), "") })
+}
+
+let ring = [ ];
+let yanking = false;
+let lastPasteStart = null;
+let lastPasteEnd = null;
+let lastPasteIndex = 0;
+
 var commands = {
     "vroy.uppercaseWord": wordCase((word) => word.toUpperCase()),
 
@@ -41,32 +68,89 @@ var commands = {
         return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
     }),
 
-    "vroy.copy": macro(
-        "multiclip.copy",
-        "emacs.exitMarkMode"
-    ),
+    "vroy.killringdebug": function() {
+        console.log(ring);
+        console.log(`lastPasteStart: ${JSON.stringify(lastPasteStart)}`);
+        console.log(`lastPasteEnd: ${JSON.stringify(lastPasteEnd)}`);
+        console.log(`lastPasteIndex: ${lastPasteIndex}`);
+    },
 
-    "vroy.paste": macro(
-        "multiclip.paste",
-        "emacs.exitMarkMode"
-    ),
+    "vroy.cancel": async function() {
+        // todo implement mark mode myself
+        await vscode.commands.executeCommand("emacs.exitMarkMode");
+        yanking = false;
+    },
 
-    "vroy.cut": macro(
-        "multiclip.cut"
-    ),
+    "vroy.copy": async function() {
+        yanking = false;
 
-    "vroy.cutToEndOfLine": macro(
-        "cursorEndSelect",
-        "multiclip.cut"
-    ),
+        ring.unshift(text());
 
-    "vroy.killLine": macro(
-        "expandLineSelection",
-        "multiclip.cut"
-    ),
+        // reset index so next paste is the new content.
+        lastPasteIndex = 0;
+
+        await vscode.commands.executeCommand("editor.action.clipboardCopyAction");
+        await vscode.commands.executeCommand("emacs.exitMarkMode");
+    },
+
+    "vroy.cut": async function() {
+        yanking = false;
+        ring.unshift(text());
+
+        // reset index so next paste is the new content.
+        lastPasteIndex = 0;
+
+        await vscode.commands.executeCommand("editor.action.clipboardCopyAction");
+        await deleteCurrentSelection();
+        await vscode.commands.executeCommand("emacs.exitMarkMode");
+    },
+
+
+    // todo support command palette selection similar to multiclip.list?
+    // todo support pasting to multiple cursors?
+
+    "vroy.paste": async function() {
+        console.log("vroy.paste");
+        yanking = true;
+
+        lastPasteStart = cursor();
+        await editor().edit(builder => builder.insert(lastPasteStart, ring[lastPasteIndex]))
+        lastPasteEnd = cursor();
+    },
+
+    "vroy.pasteCycle": async function() {
+        if (!yanking) {
+            vscode.window.setStatusBarMessage("Previous command was not a yank", 3000);
+            return;
+        }
+
+        // Increment here so that two pastes in a row paste the same index.
+        lastPasteIndex++;
+
+        if (lastPasteIndex >= ring.length) {
+            lastPasteIndex = 0;
+        }
+
+        await editor().edit(builder => {
+            builder.delete(new vscode.Range(lastPasteStart, lastPasteEnd));
+            builder.insert(lastPasteStart, ring[lastPasteIndex]);
+        });
+        lastPasteEnd = cursor();
+    },
+
+    "vroy.killWordRight": macro("cursorWordRightSelect", "vroy.cut"),
+    "vroy.killWordLeft": macro("cursorWordLeftSelect", "vroy.cut"),
+    "vroy.killToEndOfLine": macro("cursorEndSelect", "vroy.cut"),
+    "vroy.killLine": macro("expandLineSelection", "vroy.cut"),
+    "vroy.killToBeginningOfLine": async function() {
+        let before = cursor();
+        await vscode.commands.executeCommand("cursorLineStart");
+        editor().selection = new vscode.Selection(before, cursor());
+        await vscode.commands.executeCommand("vroy.cut");
+    },
 
     "vroy.marked": function() {
-        var filePath = vscode.window.activeTextEditor.document.fileName;
+        var filePath = editor().document.fileName;
         var fileName = path.basename(filePath);
 
         // filePath and fileName are the same in a new untitled document.

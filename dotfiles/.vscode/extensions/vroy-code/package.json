@@ -20,6 +20,11 @@
                 "command": "vroy.marked",
                 "title": "Marked",
                 "category": "vroy"
+            },
+            {
+                "command": "vroy.killringdebug",
+                "title": "killringdebug",
+                "category": "vroy"
             }
         ],
         "keybindings": [

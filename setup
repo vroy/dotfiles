@@ -28,7 +28,6 @@ dotfiles() {
     linked "Library/Application Support/Code/User/settings.json"
     linked "Library/Application Support/Code/User/keybindings.json"
     linked ".vscode/extensions/vroy-code"
-    linked ".vscode/extensions/vscode-multiclip"
 
     mkdir -p ~/Library/KeyBindings
     linked "Library/KeyBindings/DefaultKeyBinding.dict"

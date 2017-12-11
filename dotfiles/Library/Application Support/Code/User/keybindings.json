@@ -33,11 +33,33 @@
     "key": "ctrl+w",
     "command": "-workbench.action.switchWindow"
   },
+  {
+    "key": "cmd+c",
+    "command": "-editor.action.clipboardCopyAction"
+  },
+  {
+    "key": "alt+d",
+    "command": "-deleteWordRight"
+  },
+  {
+    "key": "alt+backspace",
+    "command": "-deleteWordLeft"
+  },
+  {
+    "key": "ctrl+g",
+    "command": "-emacs.C-g"
+  },
+  {
+    "key": "ctrl+g",
+    "command": "-emacs.exitMarkMode"
+  },
+
+  { "key": "shift+cmd+k", "command": "-editor.action.deleteLines" },
 
   // clipboard and kill ring
   {
     "key": "alt+y",
-    "command": "vroy.paste",
+    "command": "vroy.pasteCycle",
     "when": "editorTextFocus"
   },
   {
@@ -56,18 +78,43 @@
     "when": "editorTextFocus"
   },
   {
+    "key": "cmd+c",
+    "command": "vroy.copy",
+    "when": "editorTextFocus"
+  },
+  {
     "key": "cmd+k",
     "command": "vroy.killLine",
     "when": "editorTextFocus"
   },
   {
     "key": "ctrl+k",
-    "command": "vroy.cutToEndOfLine",
+    "command": "vroy.killToEndOfLine",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+ctrl+k",
+    "command": "vroy.killToBeginningOfLine",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+d",
+    "command": "vroy.killWordRight",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+backspace",
+    "command": "vroy.killWordLeft",
+    "when": "editorTextFocus"
+  },
+
+  {
+    "key": "ctrl+g",
+    "command": "vroy.cancel",
     "when": "editorTextFocus"
   },
 
   // misc. editor shortcuts
-
   {
     "key": "ctrl+c ctrl+k",
     "command": "editor.action.commentLine",
