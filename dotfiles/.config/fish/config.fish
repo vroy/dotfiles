@@ -56,21 +56,38 @@ function _prompt_color_for_status
   end
 end
 
+# This creates a notification if the frontmost app is not already iterm.
+#
+# Found out about lsappinfo here: https://superuser.com/a/1004714
+#
+# Found alternative implementation using osascript later:
+# https://adrian-philipp.com/post/cmd-duration-fish-shell
+function slow_terminal_notifier
+  set current_app (lsappinfo info -only bundleid (lsappinfo front) | cut -d '"' -f4)
+
+  if [ "$current_app" != "com.googlecode.iterm2" ]
+    terminal-notifier \
+      -title "$history[1]" \
+      -message "Finished in $argv[1]" \
+      -sound "ping" \
+      -activate "com.googlecode.iterm2"
+  end
+end
+
 function fish_prompt
   set -l last_status $status
 
   if test $CMD_DURATION
     set command_duration (__format_time $CMD_DURATION 5)
     if test $command_duration
+      slow_terminal_notifier $command_duration
       printf "\n%s~ $command_duration\n" (set_color red)
     end
   end
 
   if test -d .git
-    # printf '%s%s%s:%s$ ' (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) (parse_git_branch)
     printf '%s%s %s%s\n❯ ' (set_color $fish_color_cwd) (prompt_pwd) (parse_git_branch) (set_color (_prompt_color_for_status $last_status))
   else
-    # printf '%s%s%s$ ' (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
     printf '%s%s%s\n❯ ' (set_color $fish_color_cwd) (prompt_pwd) (set_color (_prompt_color_for_status $last_status))
   end
 end
