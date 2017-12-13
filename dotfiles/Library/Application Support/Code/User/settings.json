@@ -18,6 +18,7 @@
     ],
 
     "explorer.openEditors.visible": 0,
+    "explorer.confirmDragAndDrop": false,
 
     "files.trimTrailingWhitespace": true,
 
@@ -51,6 +52,5 @@
         "functions": "#93E0E3",
         "keywords": "#F0DFAF",
         "variables": "#DFAF8F"
-    },
-    "extensions.ignoreRecommendations": false
+    }
 }
