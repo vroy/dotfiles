@@ -133,15 +133,6 @@ abbr j 'jarvis'
 abbr mux 'tmuxinator'
 
 # Commonly used locations
-set -U platform ~/nautilus/platform
-set -U ci ~/nautilus/platform/ci
 set -U code ~/code
-set -U caspian ~/caspian
-set -U jarvis ~/nautilus/platform/jarvis
-
 set -U dotfiles ~/dotfiles
-set -U nautilus ~/nautilus
-set -U pravega ~/nautilus/pravega
-set -U analytics ~/nautilus/analytics
-set -U adminrouter ~/nautilus/dcos/packages/adminrouter/extra/src
-set -U dcos ~/nautilus/dcos
+set -U switch ~/code/switch
