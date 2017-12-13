@@ -128,6 +128,7 @@ codeExtensions() {
     code --install-extension bierner.markdown-mermaid
     code --install-extension bierner.markdown-preview-github-styles
     code --install-extension erd0s.terraform-autocomplete
+    code --install-extension lunaryorn.fish-ide
     code --install-extension JPTarquino.postgresql
     code --install-extension lukehoban.Go
     code --install-extension mauve.terraform
@@ -135,6 +136,7 @@ codeExtensions() {
     code --install-extension PeterJausovec.vscode-docker
     code --install-extension rebornix.ruby
     code --install-extension robinbentley.sass-indented
+    code --install-extension TeddyDD.fish
     code --install-extension yzhang.markdown-all-in-one
 
     # VueJS and JavaScript
