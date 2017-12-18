@@ -108,6 +108,8 @@ set -gx GOBIN $GOPATH/bin
 set -gx PATH $HOME/bin $PATH
 set -gx PATH $HOME/code/tools $PATH
 
+set -gx PATH /usr/local/opt/python/libexec/bin $PATH
+
 if test -d $HOME/code/switch
   set -gx PATH $HOME/code/switch/devops/bin $PATH
 end
