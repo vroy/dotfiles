@@ -150,6 +150,7 @@ abbr dm 'docker-machine'
 abbr b 'bundle'
 abbr j 'jarvis'
 abbr mux 'tmuxinator'
+abbr lpsql 'psql postgresql://postgres:dev@localhost:5432/postgres'
 
 # Commonly used locations
 set -U code ~/code
