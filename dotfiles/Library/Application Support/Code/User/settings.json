@@ -9,6 +9,7 @@
     "editor.minimap.enabled": false,
     "editor.lineNumbers": "off",
     "editor.folding": false,
+    "editor.find.seedSearchStringFromSelection": false,
 
     "eslint.validate": [
         "javascript",
