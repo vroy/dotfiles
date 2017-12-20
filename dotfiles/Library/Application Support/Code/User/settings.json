@@ -19,6 +19,7 @@
     ],
 
     "explorer.openEditors.visible": 0,
+    "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
 
     "files.trimTrailingWhitespace": true,
