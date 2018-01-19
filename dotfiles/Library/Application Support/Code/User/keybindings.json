@@ -143,5 +143,17 @@
     "key": "ctrl+w",
     "command": "-emacs.C-w",
     "when": "editorTextFocus && !editorReadonly"
+  },
+
+  // autocomplete
+  {
+    "key": "ctrl+shift+space",
+    "command": "editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+space",
+    "command": "-editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly"
   }
 ]

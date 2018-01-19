@@ -11,6 +11,11 @@
     "editor.folding": false,
     "editor.find.seedSearchStringFromSelection": false,
 
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.snippetSuggestions": "none",
+    "editor.wordBasedSuggestions": false,
+    "editor.parameterHints": false,
+
     "eslint.validate": [
         "javascript",
         "javascriptreact",
@@ -27,8 +32,10 @@
     "markdown.extension.quickStyling": true,
     "markdown.extension.showExplorer": false,
 
+    "python.linting.enabled": false,
     "python.linting.lintOnSave": false,
     "python.linting.pylintPath": "/usr/local/bin/pylint",
+    "python.linting.pylintEnabled": false,
 
     "terraform.formatOnSave": true,
     "terraform.formatVarsOnSave": true,
@@ -54,5 +61,6 @@
         "functions": "#93E0E3",
         "keywords": "#F0DFAF",
         "variables": "#DFAF8F"
-    }
+    },
+    "window.zoomLevel": 0
 }

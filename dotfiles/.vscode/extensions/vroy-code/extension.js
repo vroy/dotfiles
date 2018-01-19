@@ -78,6 +78,7 @@ var commands = {
     "vroy.cancel": async function() {
         // todo implement mark mode myself
         await vscode.commands.executeCommand("emacs.exitMarkMode");
+        await vscode.commands.executeCommand("hideSuggestWidget")
         yanking = false;
     },
 
