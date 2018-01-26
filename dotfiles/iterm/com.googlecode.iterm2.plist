@@ -635,8 +635,10 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Dropbox/syncs/dotfiles/iterm</string>
+	<string>~/Documents</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
+	<string>{712, 448}</string>
+	<key>NSNavPanelExpandedSizeForSaveMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
@@ -710,11 +712,11 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 588 620 392 0 0 1920 1177 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>812 334 918 512 0 0 1680 1027 </string>
+	<string>490 258 796 473 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 12 1680 1015 0 0 1680 1027 </string>
+	<string>0 0 1680 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>247 94 810 502 0 0 1920 1177 </string>
+	<string>194 73 810 502 0 0 1680 1027 </string>
 	<key>NeverWarnAboutShortLivedSessions_2F33DA68-033A-4BB4-8F6C-1C6EECE774AF</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_D49B4CDB-0C3A-4363-BD39-4F68F165B123</key>
@@ -1267,7 +1269,7 @@
 			<key>Shortcut</key>
 			<string></string>
 			<key>Silence Bell</key>
-			<false/>
+			<true/>
 			<key>Smart Cursor Color</key>
 			<true/>
 			<key>Smart Selection Rules</key>
@@ -1375,7 +1377,7 @@
 					<key>action</key>
 					<string>GrowlTrigger</string>
 					<key>parameter</key>
-					<string>Terraform Configmration Pending</string>
+					<string>Terraform Confirmation Pending</string>
 					<key>partial</key>
 					<true/>
 					<key>regex</key>
@@ -1480,7 +1482,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-12-16T21:51:59Z</date>
+	<date>2018-01-26T19:04:58Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -1489,6 +1491,8 @@
 	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
+	<key>ShowFullScreenTabBar</key>
+	<true/>
 	<key>ShowPaneTitles</key>
 	<true/>
 	<key>SmartPlacement</key>
@@ -1529,6 +1533,8 @@
 	<string>dl</string>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
