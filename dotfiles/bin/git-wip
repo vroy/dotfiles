@@ -1,0 +1,152 @@
+#!/usr/bin/env ruby
+
+=begin
+Poor man git-stash using "wip" commits.
+
+This solves a few problems for me:
+
+* I suck at keeping track of stashes.
+* I like making a lot of commits when I work on a branch for more than a couple
+  of hours. I'm too lazy to write good messages every time though and I prefer to
+  write a good message at the end.
+
+## Setup
+
+Add a post-checkout script to your repository (.git/hooks/post-checkout):
+
+```
+#!/bin/sh
+gitwip check
+```
+=end
+
+require "optparse"
+require "ostruct"
+
+begin
+  require "colorize"
+rescue LoadError
+  puts "Missing 'colorize' gem. `gem install colorize`"
+  exit 1
+end
+
+def has_wip_in_branch?
+  return `git log --oneline --grep '^gitwip'`.lines.size > 0
+end
+
+def has_active_wip?
+  last_commit_message = `git log --format=%B -n 1`
+  return last_commit_message =~ /^gitwip/
+end
+
+def show(options)
+  if has_active_wip?
+    puts `git diff --stat HEAD^`
+  end
+end
+
+def list(options)
+  git_lines = `git log --oneline --grep '^gitwip'`.lines
+  git_lines.each_with_index do |line, index|
+    sha, _ = line.split
+    git = `git show #{sha} --abbrev-commit --format="format:%h %ar" --no-patch`
+    puts "wip@{#{index}}: #{git}"
+  end
+end
+
+def check(options)
+  if has_active_wip?
+    puts "There is WIP committed to this branch. Run `git wip pop` to revert.".red
+    exit 0
+  end
+end
+
+def stash(options)
+  unless options.dry_run
+    `git add .`
+    `git commit -m 'gitwip'`
+  end
+  puts "All WIP stashed.".green
+end
+
+def pop(options)
+  if has_active_wip?
+    unless options.dry_run
+      `git reset --soft HEAD^`
+      `git reset`
+    end
+    puts "Most recent WIP popped.".green
+    return true
+  else
+    puts "No stashed WIP.".yellow
+    return false
+  end
+end
+
+def reset(options)
+  if options.dry_run
+    puts "Would pop gitwip:"
+    list(options)
+    return
+  end
+
+  while pop(options)
+  end
+end
+
+def pre_push_check(options)
+  if has_wip_in_branch?
+    puts "There are gitwip(s) commits in this branch, cannot proceed with a push until the commits are reverted".red
+    exit 1
+  end
+end
+
+
+def parse_options
+  options = OpenStruct.new
+  options.action = "stash"
+  options.dry_run = false
+
+  parser = OptionParser.new do |opts|
+    opts.banner = "Usage: git-wip <check|pop|show> [options]"
+
+    opts.on("--dry-run", "Dry run (no actions)") do |v|
+      options.dry_run = v
+    end
+
+    opts.on("-h", "--help", "Show this message") do
+      puts opts
+      exit
+    end
+  end
+
+  parser.parse!(ARGV)
+
+  options.action = ARGV.pop || "stash"
+
+  return options
+end
+
+
+if __FILE__ == $0
+  options = parse_options
+
+  case options.action
+  when "check"
+    check(options)
+  when "pre-push-check"
+    pre_push_check(options)
+  when "show", "status"
+    show(options)
+  when "list"
+    list(options)
+  when "stash"
+    stash(options)
+  when "pop"
+    pop(options)
+  when "reset"
+    reset(options)
+  else
+    puts "action '#{options.action}' not valid".red
+  end
+end
