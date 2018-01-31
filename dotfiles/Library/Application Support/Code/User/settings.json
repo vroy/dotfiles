@@ -54,6 +54,7 @@
         "editor.background": "#3F3F3F",
         "editor.lineHighlightBackground": "#383838"
     },
+    "workbench.iconTheme": "vscode-icons",
 
     "editor.tokenColorCustomizations": {
         "comments": "#7F9F7F",

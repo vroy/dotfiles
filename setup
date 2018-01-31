@@ -122,6 +122,7 @@ codeExtensions() {
     code --install-extension christian-kohler.npm-intellisense
     code --install-extension EditorConfig.editorconfig
     code --install-extension lfs.vscode-emacs-friendly
+    code --install-extension robertohuertasm.vscode-icons
     code --install-extension ziyasal.vscode-open-in-github
 
     # Languages
