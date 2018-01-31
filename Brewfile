@@ -18,7 +18,9 @@ brew "reattach-to-user-namespace"
 brew "tree"
 brew "wget"
 brew "openssl"
-brew "htop"
+
+# Disabled until fixed in high sierra...
+# brew "htop"
 
 # Languages
 brew "go"
