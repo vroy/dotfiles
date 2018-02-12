@@ -27,6 +27,10 @@
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
 
+    "files.defaultLanguage": "markdown",
+    "files.exclude": {
+        "**/__pycache__": true
+    },
     "files.trimTrailingWhitespace": true,
 
     "markdown.extension.quickStyling": true,
