@@ -36,11 +36,13 @@ brew "ansible"
 brew "awscli"
 cask "docker"
 cask "insomnia"
+brew "kubectl"
 brew "packer"
 brew "terminal-notifier"
 brew "terraform"
 brew "tflint"
 cask "visual-studio-code"
+cask "tigervnc-viewer"
 
 # Apps
 cask "gitify"

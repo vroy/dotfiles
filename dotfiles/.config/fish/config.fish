@@ -152,6 +152,7 @@ abbr j 'jarvis'
 abbr mux 'tmuxinator'
 abbr lpsql 'psql postgresql://postgres:dev@localhost:5432/postgres'
 abbr tf terraform
+abbr k 'kubectl'
 
 # Commonly used locations
 set -U code ~/code
