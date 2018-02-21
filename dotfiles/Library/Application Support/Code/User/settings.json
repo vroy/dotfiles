@@ -41,8 +41,10 @@
     "python.linting.pylintPath": "/usr/local/bin/pylint",
     "python.linting.pylintEnabled": false,
 
-    "terraform.formatOnSave": true,
-    "terraform.formatVarsOnSave": true,
+    "terraform.format.enable": true,
+    "[terraform]": {
+        "editor.formatOnSave": true
+    },
     "terraform.indexing": {
         "enabled": true,
         "indexerPath": "terraform-index",
