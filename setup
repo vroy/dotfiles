@@ -132,8 +132,10 @@ codeExtensions() {
     code --install-extension lunaryorn.fish-ide
     code --install-extension JPTarquino.postgresql
     code --install-extension lukehoban.Go
+    code --install-extension mathiasfrohlich.kotlin
     code --install-extension mauve.terraform
     code --install-extension ms-python.python
+    code --install-extension naco-siren.gradle-language
     code --install-extension PeterJausovec.vscode-docker
     code --install-extension rebornix.ruby
     code --install-extension robinbentley.sass-indented
