@@ -128,6 +128,7 @@ codeExtensions() {
     # Languages
     code --install-extension bierner.markdown-mermaid
     code --install-extension bierner.markdown-preview-github-styles
+    code --install-extension coolbear.systemd-unit-file
     code --install-extension erd0s.terraform-autocomplete
     code --install-extension lunaryorn.fish-ide
     code --install-extension JPTarquino.postgresql
