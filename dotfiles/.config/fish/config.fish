@@ -153,6 +153,7 @@ abbr mux 'tmuxinator'
 abbr lpsql 'psql postgresql://postgres:dev@localhost:5432/postgres'
 abbr tf terraform
 abbr k 'kubectl'
+abbr e 'epoxy'
 
 # Commonly used locations
 set -U code ~/code
