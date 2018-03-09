@@ -135,12 +135,14 @@ codeExtensions() {
     code --install-extension lukehoban.Go
     code --install-extension mathiasfrohlich.kotlin
     code --install-extension mauve.terraform
+    code --install-extension mikestead.dotenv
     code --install-extension ms-python.python
     code --install-extension naco-siren.gradle-language
     code --install-extension PeterJausovec.vscode-docker
     code --install-extension rebornix.ruby
     code --install-extension robinbentley.sass-indented
     code --install-extension TeddyDD.fish
+    code --install-extension vscjava.vscode-java-pack
     code --install-extension wholroyd.jinja
     code --install-extension yzhang.markdown-all-in-one
 
