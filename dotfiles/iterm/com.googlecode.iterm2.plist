@@ -712,11 +712,11 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-1206 314 796 473 -2560 -390 2560 1417 </string>
+	<string>-2101 -297 796 473 -2560 -390 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1275 -390 1275 1417 -2560 -390 2560 1417 </string>
+	<string>0 12 1640 1015 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>194 73 810 502 0 0 1680 1027 </string>
+	<string>389 127 825 502 0 0 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_2F33DA68-033A-4BB4-8F6C-1C6EECE774AF</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_D49B4CDB-0C3A-4363-BD39-4F68F165B123</key>
@@ -1482,7 +1482,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-02-21T14:12:55Z</date>
+	<date>2018-03-09T02:42:13Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -1492,7 +1492,7 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>ShowPaneTitles</key>
 	<true/>
 	<key>SmartPlacement</key>
@@ -1538,6 +1538,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.5.beta.2</string>
+	<string>3.1.6beta3</string>
 </dict>
 </plist>
