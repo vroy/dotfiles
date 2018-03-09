@@ -1,0 +1,9 @@
+#!/bin/bash
+
+DIR=$( cd "$( dirname "$0" )" && pwd )
+
+java -jar $DIR/plantuml.jar $1
+
+out=$(echo $1 | sed 's/\(.*\)\.uml/\1.png/')
+
+open -a Safari.app $out

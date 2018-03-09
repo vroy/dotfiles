@@ -162,6 +162,19 @@ var commands = {
         }
 
         child_process.exec(`open -a Marked ${filePath}`);
+    },
+
+    "vroy.umlme": function() {
+        var filePath = editor().document.fileName;
+        var fileName = path.basename(filePath);
+
+        // filePath and fileName are the same in a new untitled document.
+        if (filePath === fileName) {
+            vscode.window.showErrorMessage("Cannot open unsaved document in Marked.");
+            return;
+        }
+
+        child_process.exec(`umlme ${filePath}`)
     }
 }
 

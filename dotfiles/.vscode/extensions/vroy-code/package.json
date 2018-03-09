@@ -22,6 +22,11 @@
                 "category": "vroy"
             },
             {
+                "command": "vroy.umlme",
+                "title": "umlme",
+                "category": "vroy"
+            },
+            {
                 "command": "vroy.killringdebug",
                 "title": "killringdebug",
                 "category": "vroy"
