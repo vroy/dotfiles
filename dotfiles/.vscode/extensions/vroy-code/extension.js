@@ -139,6 +139,7 @@ var commands = {
         lastPasteEnd = cursor();
     },
 
+    "vroy.indentLines": macro("editor.action.indentLines", "emacs.exitMarkMode"),
     "vroy.killWordRight": macro("cursorWordRightSelect", "vroy.cut"),
     "vroy.killWordLeft": macro("cursorWordLeftSelect", "vroy.cut"),
     "vroy.killToEndOfLine": macro("cursorEndSelect", "vroy.cut"),

@@ -128,14 +128,6 @@
 
   // file navigation
   {
-    "key": "cmd+[",
-    "command": "workbench.action.focusPreviousGroup"
-  },
-  {
-    "key": "cmd+]",
-    "command": "workbench.action.focusNextGroup"
-  },
-  {
     "key": "ctrl+x ctrl+f",
     "command": "workbench.action.quickOpen"
   },
@@ -155,5 +147,22 @@
     "key": "ctrl+space",
     "command": "-editor.action.triggerSuggest",
     "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly"
+  },
+
+  // tabs
+  {
+    "key": "cmd+]",
+    "command": "-workbench.action.focusNextGroup"
+  },
+
+  {
+    "key": "tab",
+    "command": "-tab"
+  },
+
+  {
+    "key": "tab",
+    "command": "vroy.indentLines"
   }
+
 ]
