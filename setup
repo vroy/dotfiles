@@ -92,6 +92,7 @@ installGems() {
     gem install ruby-keychain
     gem install octokit
     gem install tmuxinator
+    gem install ruby-jq
 }
 
 installOthers() {
