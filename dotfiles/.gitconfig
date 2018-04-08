@@ -50,6 +50,7 @@
 [diff]
 	renames = copies
 	mnemonicprefix = true
+  colorMoved = zebra
 
 [hub]
 protocol = https
