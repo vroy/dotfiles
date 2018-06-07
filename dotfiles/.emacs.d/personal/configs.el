@@ -153,6 +153,8 @@
 
 (setq-default flycheck-temp-prefix ".flycheck")
 
+
+(add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)
 ;;
 ;; https://gist.github.com/the-kenny/267162
 ;; http://emacs.stackexchange.com/a/10963

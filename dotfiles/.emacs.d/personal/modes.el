@@ -14,19 +14,6 @@
 (add-to-list 'auto-mode-alist '("\\.erb$" . rhtml-mode) )
 (add-to-list 'auto-mode-alist '("\\.html\\.erb$" . rhtml-mode) )
 
-(add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode) )
-
-(add-to-list 'auto-mode-alist '("\\.scss$" . scss-mode) )
-(add-to-list 'auto-mode-alist '("\\.sass$" . sass-mode) )
-(add-to-list 'auto-mode-alist '("\\.styl$" . scss-mode) )
-(add-to-list 'auto-mode-alist '("\\.less$" . scss-mode) )
-
-(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode) )
-(add-to-list 'auto-mode-alist '("\\.coffee\\.erb$" . coffee-mode) )
-(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode) )
-
-(add-to-list 'auto-mode-alist '("\\.vue$" . vue-mode) )
-
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode) )
 
 (add-to-list 'auto-mode-alist '("\\.yml\\.?" . yaml-mode) )
@@ -39,8 +26,6 @@
 (add-to-list 'auto-mode-alist '("\\.rabl$" . ruby-mode) )
 
 (add-to-list 'auto-mode-alist '("\/\\.env" . sh-mode) )
-(add-to-list 'auto-mode-alist '("inventory$" . conf-mode) )
-(add-to-list 'auto-mode-alist '("jarvis$" . conf-mode) )
 
 (add-to-list 'auto-mode-alist '("/etc/nginx/sites-available/.*" . nginx-mode))
 

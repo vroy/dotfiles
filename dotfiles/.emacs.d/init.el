@@ -20,15 +20,9 @@
 (load "search.el")
 (load "modes.el")
 (load "bindings.el")
-(load "hooks.el")
 (load "snippets.el")
-(load "rspec.el")
-(load "clojure-cfg.el")
-(load "paredit-cfg.el")
 (load "golang.el")
 (load "python-cfg.el")
-;; (load "erlang.el")
-;; (load "elixir.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -43,6 +37,3 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-;; (load "crystal.el")
-;; (load "crystal-flycheck.el")
