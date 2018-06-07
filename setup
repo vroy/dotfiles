@@ -143,6 +143,7 @@ codeExtensions() {
     code --install-extension PeterJausovec.vscode-docker
     code --install-extension rebornix.ruby
     code --install-extension robinbentley.sass-indented
+    code --install-extension secanis.jenkinsfile-support
     code --install-extension TeddyDD.fish
     code --install-extension wholroyd.jinja
     code --install-extension yzhang.markdown-all-in-one
