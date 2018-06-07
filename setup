@@ -93,6 +93,7 @@ installGems() {
     gem install octokit
     gem install tmuxinator
     gem install ruby-jq
+    gem install aws-sdk
 }
 
 installOthers() {
