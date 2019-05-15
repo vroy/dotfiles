@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+
+import random
+
+trains = [
+  "http://stmedia.startribune.com/images/Train+Derailment+Ellendate.jpg",
+  "https://metrouk2.files.wordpress.com/2017/01/ad_232632628.jpg?quality=80&strip=all&strip=all",
+  "https://bloximages.chicago2.vip.townnews.com/azdailysun.com/content/tncms/assets/v3/editorial/2/5f/25f8886e-a6a9-5166-b7d2-9e4fa6dd39fa/5b1889abc0634.image.jpg?resize=1200%2C799",
+  "https://s.abcnews.com/images/US/amtrak-train-derailed-seattle-11-ap-jc-171218_4x3_992.jpg",
+  "https://crawfordcountynow.sagacom.com/wp-content/blogs.dir/111/files/2017/06/Train-derailment-06-10-17-3.jpg",
+  "https://bloximages.newyork1.vip.townnews.com/roanoke.com/content/tncms/assets/v3/editorial/4/63/463ca0f9-f5c1-5167-865e-ba7e3375d40b/5a5cd657bf604.image.jpg?resize=1200%2C900",
+  "https://bloximages.chicago2.vip.townnews.com/lacrossetribune.com/content/tncms/assets/v3/editorial/a/28/a28c355a-3d68-5ec5-b5ff-67fc48ff2077/57a2415fad5a9.image.jpg?resize=1200%2C774",
+  "http://i2.cdn.cnn.com/cnnnext/dam/assets/170702184458-amtrak-train-derails-chambers-bay-golf-course-washington-super-tease.jpg",
+  "http://www.trbimg.com/img-5957cef9/turbine/ct-train-derailment-dumps-thousands-of-gallons-of-crude-oil-in-plainfield-20170701",
+  "http://a.abcnews.com/images/US/train-derailment-ht-14-jpo-171218_2_16x9_992.jpg",
+  "http://www.rcinet.ca/en/wp-content/uploads/sites/3/2018/07/19448994.jpg",
+  "http://a.abcnews.com/images/US/train-derailment-ht-13-jpo-171218_16x9_992.jpg",
+  "https://bloximages.newyork1.vip.townnews.com/stltoday.com/content/tncms/assets/v3/editorial/f/3e/f3e885fc-0ee7-575d-a644-13fc203f0d42/5810b09126019.image.jpg?resize=1200%2C684",
+  "https://crawfordcountynow.sagacom.com/wp-content/blogs.dir/111/files/2017/06/Train-derailment-06-10-17-2.jpg",
+  "https://bloximages.chicago2.vip.townnews.com/lacrossetribune.com/content/tncms/assets/v3/editorial/d/e3/de395b19-657d-5b0d-94b3-1c028035c895/54d411f4adcd8.image.jpg?resize=1200%2C818",
+  "https://bloximages.chicago2.vip.townnews.com/missoulian.com/content/tncms/assets/v3/editorial/9/a5/9a57ffa1-fbb1-5aaa-abad-0511664b492e/5babdccce762e.image.jpg?resize=1200%2C798",
+  "http://static-10.sinclairstoryline.com/resources/media/1c7e0a13-b97d-44e6-82d2-ea1ab5c07173-large16x9_Trainderailment.JPG?1493856236840",
+]
+
+print(random.choice(trains))

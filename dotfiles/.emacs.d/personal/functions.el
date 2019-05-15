@@ -91,6 +91,10 @@ Passes ARG to command `kill-whole-line' when provided."
   (interactive)
   (start-process "typora" "typora" "open" "-a" "Typora" (buffer-file-name)))
 
+(defun markoff ()
+  (interactive)
+  (start-process "markoff" "markoff" "open" "-a" "Markoff" (buffer-file-name)))
+
 (defun umlme ()
   (interactive)
-  (start-process "umlme" "umlme" "umlme" "--open"))
+  (start-process "umlme" "umlme" "umlme" (buffer-file-name)))

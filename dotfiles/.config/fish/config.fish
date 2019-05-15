@@ -22,10 +22,10 @@ end
 
 function __format_time -d "Format milliseconds to a human readable format"
   set -l milliseconds $argv[1]
-  set -l seconds (math "$milliseconds / 1000 % 60")
-  set -l minutes (math "$milliseconds / 60000 % 60")
-  set -l hours (math "$milliseconds / 3600000 % 24")
-  set -l days (math "$milliseconds / 86400000")
+  set -l seconds (math -s0 "$milliseconds / 1000 % 60")
+  set -l minutes (math -s0 "$milliseconds / 60000 % 60")
+  set -l hours (math -s0  "$milliseconds / 3600000 % 24")
+  set -l days (math -s0 "$milliseconds / 86400000")
   set -l time
   set -l threshold $argv[2]
 
@@ -85,6 +85,15 @@ function fish_prompt
     end
   end
 
+  if set -q EPOXY_ASSUME_ROLE_ARN
+     set_color brwhite -b red
+     printf "\n##########################################################\n"
+     printf "# Proceed with care! You are currently in `assume-shell` #\n"
+     printf "##########################################################"
+     set_color normal
+     printf "\n\n"
+  end
+
   if test -d .git
     printf '%s%s %s%s\n❯ ' (set_color $fish_color_cwd) (prompt_pwd) (parse_git_branch) (set_color (_prompt_color_for_status $last_status))
   else
@@ -110,9 +119,11 @@ set -gx PATH $HOME/code/tools $PATH
 
 set -gx PATH /usr/local/opt/python/libexec/bin $PATH
 
-if test -d $HOME/code/switch
-  set -gx PATH $HOME/code/switch/devops/bin $PATH
+if test -d $HOME/switch
+  set -gx PATH $HOME/switch/devops/bin $PATH
 end
+
+set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
 
 set -gx JARVIS_USERNAME vincentroy
 
@@ -158,4 +169,4 @@ abbr e 'epoxy'
 # Commonly used locations
 set -U code ~/code
 set -U dotfiles ~/dotfiles
-set -U switch ~/code/switch
+set -U switch ~/switch

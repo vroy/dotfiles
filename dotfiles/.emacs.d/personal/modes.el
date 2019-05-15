@@ -1,6 +1,4 @@
 (require 'rhtml-mode)
-(require 'haml-mode)
-(require 'coffee-mode)
 (require 'yaml-mode)
 (require 'scss-mode)
 (require 'sass-mode)
@@ -36,3 +34,5 @@
 (add-to-list 'auto-mode-alist '("\\.diff$" . diff-mode))
 
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+(add-to-list 'auto-mode-alist '("\\.ino$" . arduino-mode))

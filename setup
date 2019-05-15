@@ -89,15 +89,14 @@ setFishShell() {
 }
 
 installGems() {
-    gem install ruby-keychain
-    gem install octokit
-    gem install tmuxinator
-    gem install ruby-jq
-    gem install aws-sdk
+    gem install -N ruby-keychain
+    gem install -N octokit
+    gem install -N tmuxinator
+    gem install -N aws-sdk
 }
 
 installOthers() {
-    go get github.com/vroy/git-gb
+    go get -u github.com/vroy/git-gb
 
     # terraform-index, used with the mauve.terraform extension
     set +e
@@ -116,42 +115,46 @@ osxDefaults() {
     ./os_x_defaults.sh
 }
 
+codePlugin() {
+    code --install-extension --force $0
+}
+
 codeExtensions() {
     echo Installing VS Code Extensions
 
     # Editor
-    code --install-extension christian-kohler.path-intellisense
-    code --install-extension christian-kohler.npm-intellisense
-    code --install-extension EditorConfig.editorconfig
-    code --install-extension lfs.vscode-emacs-friendly
-    code --install-extension robertohuertasm.vscode-icons
-    code --install-extension ziyasal.vscode-open-in-github
+    codePlugin christian-kohler.path-intellisense
+    codePlugin christian-kohler.npm-intellisense
+    codePlugin EditorConfig.editorconfig
+    codePlugin lfs.vscode-emacs-friendly
+    codePlugin vscode-icons-team.vscode-icons
+    codePlugin ziyasal.vscode-open-in-github
 
     # Languages
-    code --install-extension bierner.markdown-mermaid
-    code --install-extension bierner.markdown-preview-github-styles
-    code --install-extension coolbear.systemd-unit-file
-    code --install-extension erd0s.terraform-autocomplete
-    code --install-extension lunaryorn.fish-ide
-    code --install-extension JPTarquino.postgresql
-    code --install-extension lukehoban.Go
-    code --install-extension mathiasfrohlich.kotlin
-    code --install-extension mauve.terraform
-    code --install-extension mikestead.dotenv
-    code --install-extension ms-python.python
-    code --install-extension naco-siren.gradle-language
-    code --install-extension PeterJausovec.vscode-docker
-    code --install-extension rebornix.ruby
-    code --install-extension robinbentley.sass-indented
-    code --install-extension secanis.jenkinsfile-support
-    code --install-extension TeddyDD.fish
-    code --install-extension wholroyd.jinja
-    code --install-extension yzhang.markdown-all-in-one
+    codePlugin bierner.markdown-mermaid
+    codePlugin bierner.markdown-preview-github-styles
+    codePlugin coolbear.systemd-unit-file
+    codePlugin erd0s.terraform-autocomplete
+    codePlugin lunaryorn.fish-ide
+    codePlugin JPTarquino.postgresql
+    codePlugin ms-vscode.Go
+    codePlugin mathiasfrohlich.kotlin
+    codePlugin mauve.terraform
+    codePlugin mikestead.dotenv
+    codePlugin ms-python.python
+    codePlugin naco-siren.gradle-language
+    codePlugin PeterJausovec.vscode-docker
+    codePlugin rebornix.ruby
+    codePlugin robinbentley.sass-indented
+    codePlugin secanis.jenkinsfile-support
+    codePlugin skyapps.fish-vscode
+    codePlugin wholroyd.jinja
+    codePlugin yzhang.markdown-all-in-one
 
     # VueJS and JavaScript
-    code --install-extension dbaeumer.vscode-eslint
-    code --install-extension octref.vetur
-    code --install-extension dariofuzinato.vue-peek
+    codePlugin dbaeumer.vscode-eslint
+    codePlugin octref.vetur
+    codePlugin dariofuzinato.vue-peek
 }
 
 configurePython() {

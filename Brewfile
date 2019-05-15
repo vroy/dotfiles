@@ -32,7 +32,6 @@ brew "node"
 brew "ruby"
 
 # Devtools
-brew "ansible"
 brew "awscli"
 cask "docker"
 cask "insomnia"

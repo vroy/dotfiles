@@ -31,6 +31,8 @@
 (depends-on "web-mode")
 (depends-on "plantuml-mode")
 (depends-on "terraform-mode")
+(depends-on "arduino-mode")
+(depends-on "kotlin-mode")
 
 ;; Themes
 (depends-on "zenburn-theme")

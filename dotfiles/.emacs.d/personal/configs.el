@@ -38,14 +38,12 @@
 ;; https://github.com/technomancy/emacs-starter-kit/issues/39
 (setq ido-use-filename-at-point nil)
 
-
-
 ;; Enable projectile
 (projectile-global-mode)
 (setq projectile-indexing-method 'alien)
 (setq projectile-enable-caching t)
-(setq projectile-completion-system 'grizzl)
-
+(setq projectile-completion-system 'ido)
+(setq projectile-sort-order 'recently-active)
 
 ;; Strip trailing whitespace before saving files.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -75,6 +73,8 @@
 (setq-default tab-width 2)
 
 (setq nginx-indent-level 2)
+
+(setq kotlin-tab-width 4)
 
 
 ;; highlight the current line
