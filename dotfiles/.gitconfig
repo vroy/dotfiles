@@ -61,8 +61,10 @@ protocol = https
 clean = git-media-clean %f
 smudge = git-media-smudge %f
 [credential]
-helper = osxkeychain
+	helper = /usr/local/share/gcm-core/git-credential-manager
 [pull]
 rebase = true
 [rebase]
 autoStash = true
+[credential "https://dev.azure.com"]
+	useHttpPath = true

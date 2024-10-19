@@ -1,15 +1,12 @@
-tap "caskroom/cask"
-tap "caskroom/versions"
 tap "homebrew/bundle"
-tap "homebrew/core"
-tap "homebrew/versions"
 tap "wata727/tflint"
 
 # Command line
 brew "fish"
 brew "git"
+cask "git-credential-manager"
 brew "jq"
-brew "md5sha1sum"
+brew "coreutils"
 brew "nginx"
 brew "sshuttle"
 brew "ag"
@@ -19,29 +16,20 @@ brew "tree"
 brew "wget"
 brew "openssl"
 
-# Disabled until fixed in high sierra...
-# brew "htop"
-
 # Languages
-brew "go"
-cask "java8"
-brew "gradle"
 brew "protobuf"
-brew "python3"
-brew "node"
-brew "ruby"
+brew "asdf"
 
 # Devtools
+brew "protobuf"
 brew "awscli"
 cask "docker"
-cask "insomnia"
+cask "emacs"
 brew "kubectl"
-brew "packer"
 brew "terminal-notifier"
 brew "terraform"
 brew "tflint"
-cask "visual-studio-code"
-cask "tigervnc-viewer"
 
-# Apps
-cask "gitify"
+# Others
+brew "ollama"
+brew "pkg-config"

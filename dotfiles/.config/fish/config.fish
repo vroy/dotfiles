@@ -116,17 +116,8 @@ set -gx PATH $GOBIN $PATH
 set -gx GOBIN $GOPATH/bin
 set -gx PATH $HOME/bin $PATH
 set -gx PATH $HOME/code/tools $PATH
-
-set -gx PATH /usr/local/opt/python/libexec/bin $PATH
-
-if test -d $HOME/switch
-  set -gx PATH $HOME/switch/devops/bin $PATH
-end
-
-set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
-
-set -gx JARVIS_USERNAME vincentroy
-
+set -gx PATH /opt/homebrew/bin $PATH
+set -gx PATH $HOME/.asdf/shims/ $PATH
 set -gx DOCKER_GROUP_ID 50
 
 alias ls='ls -G'

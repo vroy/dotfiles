@@ -5,6 +5,8 @@ set -e
 DIR=$( cd "$( dirname "$0" )" && pwd )
 DOTFILES=$DIR/dotfiles
 
+PATH="/opt/homebrew/bin:$PATH"
+
 linked() {
     ln -shf "$DOTFILES/$1" "$HOME/$1"
 }
@@ -24,11 +26,6 @@ dotfiles() {
     mkdir -p ~/.config
     linked ".config/fish"
 
-    mkdir -p ~/Library/Application\ Support/Code/User
-    linked "Library/Application Support/Code/User/settings.json"
-    linked "Library/Application Support/Code/User/keybindings.json"
-    linked ".vscode/extensions/vroy-code"
-
     mkdir -p ~/Library/KeyBindings
     linked "Library/KeyBindings/DefaultKeyBinding.dict"
 }
@@ -39,29 +36,12 @@ updateBrew() {
     which brew
     if [ $? -ne 0 ] ; then
         echo Installing Homebrew
-        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
 
     echo Updating Homebrew
     brew update
     brew upgrade
-
-    # Create /usr/local/Frameworks/ required for python.
-    FW="/usr/local/Frameworks"
-
-    stat "$FW" > /dev/null 2>&1
-    if [ $? -ne 0 ]; then
-        echo "[sudo] Creating $FW"
-        sudo mkdir -p "$FW"
-    fi
-
-    MY_ID=$(id -u)
-    FW_ID=$(stat -f "%u" "$FW")
-    if [[ "$MY_ID" -ne "$FW_ID" ]]; then
-        echo "[sudo] Changing ownership of $FW"
-        sudo chown $(whoami):admin "$FW"
-    fi
-    set -e
 }
 
 brewBundle() {
@@ -82,32 +62,35 @@ setFishShell() {
     # Add fish to shells
     grep fish /etc/shells
     if [ $? -ne 0 ]; then
-        sudo sh -c "echo /usr/local/bin/fish >> /etc/shells"
+        sudo sh -c "echo /opt/homebrew/bin/fish >> /etc/shells"
         # Change shell to fish
-        chsh -s /usr/local/bin/fish
+        chsh -s /opt/homebrew/bin/fish
     fi
 }
 
-installGems() {
-    gem install -N ruby-keychain
-    gem install -N octokit
+install() {
+    asdf plugin add ruby
+    asdf plugin add nodejs
+    asdf plugin add python
+    asdf plugin add golang
+
+    asdf install ruby latest
+    asdf install nodejs latest
+    asdf install python latest
+    asdf install golang latest
+
+    asdf global ruby latest
+    asdf global nodejs latest
+    asdf global python latest
+    asdf global golang latest
+
+    PATH="$HOME/.asdf/shims:$PATH"
     gem install -N tmuxinator
-    gem install -N aws-sdk
-}
 
-installOthers() {
-    go get -u github.com/vroy/git-gb
+    go install github.com/vroy/git-gb
+    go install mvdan.cc/gofumpt@latest
 
-    # terraform-index, used with the mauve.terraform extension
-    set +e
-    which terraform-index
-    if [ $? -ne 0 ]; then
-        set -e
-        wget -O /tmp/terraform-index.zip https://github.com/mauve/terraform-index/releases/download/0.0.2/terraform-index-0.0.2-macos-amd64.zip
-        unzip /tmp/terraform-index.zip -d /usr/local/bin
-        rm /tmp/terraform-index.zip
-    fi
-    set -e
+    pip3 install requests
 }
 
 osxDefaults() {
@@ -115,70 +98,10 @@ osxDefaults() {
     ./os_x_defaults.sh
 }
 
-codePlugin() {
-    code --install-extension --force $0
-}
-
-codeExtensions() {
-    echo Installing VS Code Extensions
-
-    # Editor
-    codePlugin christian-kohler.path-intellisense
-    codePlugin christian-kohler.npm-intellisense
-    codePlugin EditorConfig.editorconfig
-    codePlugin lfs.vscode-emacs-friendly
-    codePlugin vscode-icons-team.vscode-icons
-    codePlugin ziyasal.vscode-open-in-github
-
-    # Languages
-    codePlugin bierner.markdown-mermaid
-    codePlugin bierner.markdown-preview-github-styles
-    codePlugin coolbear.systemd-unit-file
-    codePlugin erd0s.terraform-autocomplete
-    codePlugin lunaryorn.fish-ide
-    codePlugin JPTarquino.postgresql
-    codePlugin ms-vscode.Go
-    codePlugin mathiasfrohlich.kotlin
-    codePlugin mauve.terraform
-    codePlugin mikestead.dotenv
-    codePlugin ms-python.python
-    codePlugin naco-siren.gradle-language
-    codePlugin PeterJausovec.vscode-docker
-    codePlugin rebornix.ruby
-    codePlugin robinbentley.sass-indented
-    codePlugin secanis.jenkinsfile-support
-    codePlugin skyapps.fish-vscode
-    codePlugin wholroyd.jinja
-    codePlugin yzhang.markdown-all-in-one
-
-    # VueJS and JavaScript
-    codePlugin dbaeumer.vscode-eslint
-    codePlugin octref.vetur
-    codePlugin dariofuzinato.vue-peek
-}
-
-configurePython() {
-    echo "Updating pip"
-    pip3 install --upgrade pip setuptools wheel
-
-    pip3 install requests
-
-    # For VS Code
-    pip2 install pylint
-}
-
-buildBase62() {
-    cd uuid-base62-converter; ./build.sh
-}
-
 dotfiles
 updateBrew
 brewBundle
-configurePython
-installGems
-installOthers
+install
 iTermConfig
 setFishShell
 osxDefaults
-codeExtensions
-buildBase62
