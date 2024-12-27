@@ -5,8 +5,6 @@ cursor-style = block
 quit-after-last-window-closed = true
 confirm-close-surface = false
 
-cursor-click-to-move = true
-
 command = /opt/homebrew/bin/fish -c 'tmuxinator start default'
 shell-integration = fish
 
