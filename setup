@@ -28,6 +28,9 @@ dotfiles() {
 
     mkdir -p ~/Library/KeyBindings
     linked "Library/KeyBindings/DefaultKeyBinding.dict"
+
+    mkdir -p "~/Library/Application Support/com.mitchellh.ghostty"
+    linked "Library/Application Support/com.mitchellh.ghostty/config"
 }
 
 updateBrew() {

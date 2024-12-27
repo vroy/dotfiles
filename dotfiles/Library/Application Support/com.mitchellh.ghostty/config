@@ -1,0 +1,60 @@
+theme = galaxy
+font-size = 16
+cursor-style = block
+
+quit-after-last-window-closed = true
+confirm-close-surface = false
+
+cursor-click-to-move = true
+
+command = /opt/homebrew/bin/fish -c 'tmuxinator start default'
+shell-integration = fish
+
+############################################################ Keybindings
+macos-option-as-alt = true
+
+keybind = global:alt+q=toggle_quick_terminal
+
+################################################ tmux (ctrl+q, \x11)
+# new tab: ctrl+q c
+keybind = cmd+t=text:\x11c
+
+# previous tab: ctrl+q
+keybind = cmd+shift+left_bracket=text:\x11p
+keybind = ctrl+shift+tab=text:\x11p
+
+# next tab: ctrl+q n
+keybind = cmd+shift+right_bracket=text:\x11n
+keybind = ctrl+tab=text:\x11n
+
+# close tab/pane: ctrl+q x
+keybind = cmd+w=text:\x11x
+
+# split pane vertical: ctrl+q |
+keybind = cmd+d=text:\x11|
+
+# split pane horizontal: ctrl+q -
+keybind = cmd+shift+d=text:\x11-
+
+# previous pane: ctrl+q ctrl+p
+keybind = cmd+right_bracket=text:\x11\x0e
+
+# next pane: ctrl+q ctrl+n
+keybind = cmd+left_bracket=text:\x11\x10
+
+# zoom pane: ctrl+q Z
+keybind = cmd+shift+enter=text:\x11Z
+
+# cmd+index tab selection
+keybind = cmd+physical:one=text:\x111
+keybind = cmd+physical:two=text:\x112
+keybind = cmd+physical:three=text:\x113
+keybind = cmd+physical:four=text:\x114
+keybind = cmd+physical:five=text:\x115
+keybind = cmd+physical:six=text:\x116
+keybind = cmd+physical:seven=text:\x117
+keybind = cmd+physical:eight=text:\x118
+keybind = cmd+physical:nine=text:\x119
+
+# TODO: ctrl+tab doesn't work
+# https://github.com/ghostty-org/ghostty/issues/957#issuecomment-1826174640

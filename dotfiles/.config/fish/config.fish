@@ -50,7 +50,7 @@ end
 
 function _prompt_color_for_status
   if test $argv[1] -eq 0
-    echo magenta
+    echo 9D68A2
   else
     echo red
   end
