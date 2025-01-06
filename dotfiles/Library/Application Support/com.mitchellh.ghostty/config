@@ -13,6 +13,9 @@ macos-option-as-alt = true
 
 keybind = global:alt+q=toggle_quick_terminal
 
+# Allow ctrl+enter -> enter for key sequences where my finger is still on ctrl
+keybind = ctrl+enter=text:\x0D
+
 ################################################ tmux (ctrl+q, \x11)
 # new tab: ctrl+q c
 keybind = cmd+t=text:\x11c
