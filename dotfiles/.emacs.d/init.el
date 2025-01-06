@@ -134,6 +134,10 @@
 
 (setq javascript-indent-level 2)
 
+(use-package lua-mode
+  :config
+  (setq lua-indent-level 3)
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Theme
 (use-package zenburn-theme
@@ -375,11 +379,10 @@ Passes ARG to command `kill-whole-line' when provided."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(editorconfig javascript-mode git-modes yaml-mode typescript-mode zoom-window zenburn-theme terraform-mode spaceline smart-mode-line-powerline-theme protobuf-mode projectile lsp-mode ido-vertical-mode ido-completing-read+ go-mode go-errcheck flx-ido exec-path-from-shell dockerfile-mode company blacken airline-themes)))
+   '(lua-mode editorconfig javascript-mode git-modes yaml-mode typescript-mode zoom-window zenburn-theme terraform-mode spaceline smart-mode-line-powerline-theme protobuf-mode projectile lsp-mode ido-vertical-mode ido-completing-read+ go-mode go-errcheck flx-ido exec-path-from-shell dockerfile-mode company blacken airline-themes)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
